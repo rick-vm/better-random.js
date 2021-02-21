@@ -1,0 +1,7 @@
+node_modules/
+package-lock.json
+.gitignore
+tsconfig.json
+.eslintignore
+.eslintrc.json
+test/
