@@ -5,11 +5,13 @@ export interface OutputFileOptions {
 }
 
 export interface AnalyzeOptions {
-  entryOccurrence?: boolean
+  occurrences?: boolean,
+  duplicates?: boolean
 }
 
 export interface AnalyzeReturn<T> {
-  entryOccurrence?: Map<T, number>
+  occurrences?: Map<T, number>,
+  duplicates?: Map<T, number>
 }
 
 export default class OutputFile {
@@ -28,29 +30,37 @@ export default class OutputFile {
     console.log('\x1b[1m===============================================\n', '\x1b[0m');
   }
 
-  public output(output: string | number): void {
-    if (this._log) console.log(output);
-    output = new Date() + '\n' + output;
-    if (this._outputCounter > 0) output = '\n\n' + output;
-    this._writeStream.write(output);
-    this._outputCounter++;
+  public output(...outputs: (string | number)[]): void {
+    for (let output of outputs) {
+      if (this._log) console.log(output);
+      output = new Date() + '\n' + output;
+      if (this._outputCounter > 0) output = '\n\n' + output;
+      this._writeStream.write(output);
+      this._outputCounter++;
+    }
   }
 
-  public clearOutput(output: string | number): void {
-    if (this._log) console.log(output);
-    output = new Date() + '\n' + output;
-    if (this._outputCounter > 0) output = '\n\n' + output;
-    this._writeStream = createWriteStream(this._writeStream.path);
-    this._writeStream.write(output);
-    this._outputCounter++;
+  public clearOutput(...outputs: (string | number)[]): void {
+    for (let output of outputs) {
+      if (this._log) console.log(output);
+      output = new Date() + '\n' + output;
+      if (this._outputCounter > 0) output = '\n\n' + output;
+      this._writeStream = createWriteStream(this._writeStream.path);
+      this._writeStream.write(output);
+      this._outputCounter++;
+    }
   }
 
-  public analyze<T>(arr: T[], { entryOccurrence = true }: AnalyzeOptions = { entryOccurrence: true }): AnalyzeReturn<T> {
+  public analyze<T>(
+    data: T[],
+    { occurrences: entryOccurrence = false, duplicates = false }: AnalyzeOptions = { occurrences: false, duplicates: false }
+  ): AnalyzeReturn<T> {
     const returnVal: AnalyzeReturn<T> = {};
+
     if (entryOccurrence) {
       const map = new Map<T, number>();
 
-      for (const entry of arr) {
+      for (const entry of data) {
         map.set(entry, (map.get(entry) || 0) + 1);
       }
 
@@ -60,12 +70,35 @@ export default class OutputFile {
         return 0;
       });
 
-      returnVal.entryOccurrence = new Map(entries);
+      returnVal.occurrences = new Map(entries);
 
       const highest = Math.max(...map.values());
       const longestKey = Math.max(...[...map.keys()].map(key => (key + '').length));
 
-      this.output(entries.map(entry => ((entry[0] + ' - ').padEnd(longestKey + 3) + '='.repeat(Math.ceil(entry[1] / (highest / 100)))).padEnd(longestKey + 103) + ' - ' + entry[1]).join('\n'));
+      this.output('----------------------------\nOccurrences\n----------------------------\n' + `${('Entry - '.padEnd(longestKey) + 'Indicator Bar').padEnd(longestKey + 103) + ' - Occurrences'}\n` + entries.map(entry => ((entry[0] + ' - ').padEnd(longestKey + 3) + '='.repeat(Math.ceil(entry[1] / (highest / 100)))).padEnd(longestKey + 103) + ' - ' + entry[1]).join('\n'));
+    }
+
+    if (duplicates) {
+      const arr: T[] = [];
+      const map = new Map<T, number>();
+
+      for (const entry of data) {
+        if (arr.includes(entry)) {
+          map.set(entry, (map.get(entry) || 0) + 1);
+          continue;
+        }
+        arr.push(entry);
+      }
+
+      const entries = [...map].sort((a, b) => {
+        if (a[1] < b[1]) return 1;
+        if (a[1] > b[1]) return -1;
+        return 0;
+      });
+
+      returnVal.duplicates = new Map(entries);
+
+      this.output('----------------------------\nDuplicates\n----------------------------\n' + 'Entry - Duplicates' + entries.map(entry => entry[0] + ' - ' + entry[1]).join('\n'));
     }
 
     return returnVal;

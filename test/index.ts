@@ -14,4 +14,4 @@ for (let i = 0; i < 1000000; ++i) {
   arr.push(dist(rng));
 }
 
-of.analyze(arr);
+of.analyze(arr, { duplicates: true, occurrences: true });
