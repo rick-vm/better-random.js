@@ -28,5 +28,26 @@ export default class OutputFile {
         this._writeStream.write(output);
         this._outputCounter++;
     }
+    analyze(arr, { entryOccurrence = true } = { entryOccurrence: true }) {
+        const returnVal = {};
+        if (entryOccurrence) {
+            const map = new Map();
+            for (const entry of arr) {
+                map.set(entry, (map.get(entry) || 0) + 1);
+            }
+            const entries = [...map].sort((a, b) => {
+                if (a[0] > b[0])
+                    return 1;
+                if (a[0] < b[0])
+                    return -1;
+                return 0;
+            });
+            returnVal.entryOccurrence = new Map(entries);
+            const highest = Math.max(...map.values());
+            const longestKey = Math.max(...[...map.keys()].map(key => (key + '').length));
+            this.output(entries.map(entry => ((entry[0] + ' - ').padEnd(longestKey + 3) + '='.repeat(Math.ceil(entry[1] / (highest / 100)))).padEnd(longestKey + 103) + ' - ' + entry[1]).join('\n'));
+        }
+        return returnVal;
+    }
 }
 //# sourceMappingURL=OutputFile.js.map
