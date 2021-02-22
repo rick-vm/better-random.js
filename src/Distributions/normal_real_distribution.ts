@@ -1,4 +1,4 @@
-import { random_engine_base } from '../random_engine_base.js';
+import { random_engine_base } from '../Engines/random_engine_base.js';
 import { uniform_real_distribution } from './uniform_real_distribution.js';
 import { DistOptions, NormalOptions } from './typings.js';
 
