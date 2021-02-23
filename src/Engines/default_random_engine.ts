@@ -6,6 +6,6 @@ export class default_random_engine extends random_engine_base {
   }
 
   next(): number {
-    return (Math.random() * 4294967296) >> 0;
+    return Math.random() * 4294967296;
   }
 }
