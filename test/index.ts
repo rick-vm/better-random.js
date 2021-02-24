@@ -1,7 +1,7 @@
 import OutputFile from './OutputFile.js';
 import { xorshift128 } from '../src/Engines/xorshift128.js';
-import { uniform_int_distribution } from '../src/Distributions/uniform_int_distribution.js';
-import { normal_int_distribution } from '../src/Distributions/normal_int_distribution.js';
+import { uniform_int_distribution } from '../src/Distributions/uniform_distribution.js';
+import { normal_int_distribution } from '../src/Distributions/normal_distribution.js';
 
 const of = new OutputFile('./output.txt');
 
