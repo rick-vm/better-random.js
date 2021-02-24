@@ -1,12 +1,10 @@
 export abstract class random_engine_base {
-	public readonly MIN: number;
 	public readonly MAX: number;
 	public readonly RANGE: number;
 
-	constructor(min: number, max: number) {
-		this.MIN = min;
+	constructor(max: number) {
 		this.MAX = max;
-		this.RANGE = max - min;
+		this.RANGE = max + 1;
 	}
 
 	public abstract next(): number;

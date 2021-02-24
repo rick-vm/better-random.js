@@ -7,7 +7,7 @@ export class xorshift128 extends random_engine_base {
 	private _w: number;
 
 	constructor(x: number = Math.random() * Math.pow(2, 32), y: number = Math.random() * Math.pow(2, 32), z: number = Math.random() * Math.pow(2, 32), w: number = Math.random() * Math.pow(2, 32)) {
-		super(0, 4294967295);
+		super(4294967295);
 
 		this._x = x;
 		this._y = y;

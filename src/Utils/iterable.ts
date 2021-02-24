@@ -14,5 +14,5 @@ export function key(iterable: Array<unknown>): number {
 }
 
 export function key<K>(map: Map<K, unknown>, rng: random_engine_base): K | undefined {
-	return [...map.keys()][Math.floor((rng.next() - rng.MIN) / (rng.RANGE + 1))];
+	return [...map.keys()][Math.floor((rng.next() - rng.MIN) / (rng.RANGE))];
 }

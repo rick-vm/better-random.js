@@ -2,6 +2,8 @@ import { random_engine_base } from '../Engines/random_engine_base.js';
 import { uniform_real_distribution } from './uniform_distribution.js';
 import { DistOptions, NormalOptions } from './typings.js';
 
+const dist = uniform_real_distribution(0, 1, { inclusiveStart: false });
+
 export function normal_int_distribution(
 	min: number,
 	max: number,
@@ -9,7 +11,6 @@ export function normal_int_distribution(
 ): (rng: random_engine_base) => number {
 	min += inclusiveStart ? 0 : 1;
 	const range = max - min + (inclusiveEnd ? 1 : 0);
-	const dist = uniform_real_distribution(0, 1, { inclusiveStart: false });
 
 	return function distribution(rng: random_engine_base): number {
 		const res = Math.sqrt(-standard_deviation * Math.log(dist(rng))) * Math.cos((standard_deviation * Math.PI) * dist(rng)) / 10 + 0.5;
@@ -24,7 +25,6 @@ export function normal_real_distribution(
 	{ inclusiveEnd = false, inclusiveStart = true, standard_deviation = 2 }: DistOptions & NormalOptions = { inclusiveEnd: false, inclusiveStart: true, standard_deviation: 2 }
 ): (rng: random_engine_base) => number {
 	const range = max - min;
-	const dist = uniform_real_distribution(0, 1, { inclusiveStart: false });
 
 	return function distribution(rng: random_engine_base): number {
 		const res = Math.sqrt(-standard_deviation * Math.log(dist(rng))) * Math.cos((standard_deviation * Math.PI) * dist(rng)) / 10 + 0.5;

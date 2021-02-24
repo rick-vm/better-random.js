@@ -7,7 +7,7 @@ export class xoroshiro128plus extends random_engine_base {
 	private _w: number;
 
 	constructor(a: number = Math.random() * Math.pow(2, 32), b: number = Math.random() * Math.pow(2, 32), c: number = Math.random() * Math.pow(2, 32), d: number = Math.random() * Math.pow(2, 32)) {
-		super(0, 4294967295);
+		super(4294967295);
 
 		this._x = a >>> 0;
 		this._y = b >>> 0;
