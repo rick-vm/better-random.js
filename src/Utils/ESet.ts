@@ -35,4 +35,12 @@ export class ESet<V> extends Set<V> {
 		if (!this._entryArray) this._entryArray = [...this.entries()];
 		return new Vector(undefined, this._entryArray);
 	}
+
+	public random(): V | undefined {
+		return this.array[Math.floor(Math.random() * this.size)];
+	}
+
+	public randomEntry(): [V, V] | undefined {
+		return this.entryArray[Math.floor(Math.random() * this.size)];
+	}
 }
