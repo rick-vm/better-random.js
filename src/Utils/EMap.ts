@@ -5,7 +5,7 @@ export class EMap<K, V> extends Map<K, V> {
 	private _keyArray: K[] | undefined;
 	private _entryArray: [K, V][] | undefined;
 
-	constructor(entries?: [K, V][]) {
+	constructor(entries?: readonly (readonly [K, V])[]) {
 		super(entries);
 	}
 
