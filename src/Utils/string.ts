@@ -80,7 +80,6 @@ export function unique_string_generator(charset: string | string[], charCount: n
  */
 export function fast_unique_string_generator(charset: string | string[], charCount: number, { uniquePercentage = 0.99, initialStrings = undefined }: UniqueStringGeneratorOptions = { uniquePercentage: 0.99, initialStrings: undefined }): (rng: random_engine) => string {
 	const strings = new ESet<string>(initialStrings);
-	const cache = new ESet<string>(initialStrings);
 	let cached = false;
 	const min_unique = charset.length ** charCount * uniquePercentage;
 	return function unique_string(rng: random_engine): string {
@@ -92,10 +91,9 @@ export function fast_unique_string_generator(charset: string | string[], charCou
 			} while (strings.has(str) && strings.size < min_unique);
 			cached = strings.size >= min_unique;
 			strings.add(str);
-			cache.add(str);
 			return str;
 		} else {
-			return cache.random()!;
+			return strings.random()!;
 		}
 	};
 }
