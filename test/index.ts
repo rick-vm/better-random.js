@@ -1,16 +1,18 @@
 import OutputFile from './OutputFile.js';
-import { xorshift128 } from '../src/Engines/xorshift128.js';
-import { unique_string_generator } from '../src/Utils/string.js';
+import { xorshift128plus } from '../src/Engines/xorshift128plus.js';
+import { fast_unique_string_generator } from '../src/Utils/string.js';
 
 const of = new OutputFile('./output.txt');
 
-const rng = new xorshift128();
-const unique_string = unique_string_generator('0123456789', 1);
+const rng = new xorshift128plus();
+const unique_string = fast_unique_string_generator('0123456789', 3, { uniquePercentage: 1 });
 
 const arr: string[] = [];
 
-for (let i = 0; i < 3; ++i) {
+console.time();
+for (let i = 0; i < 1000; ++i) {
 	arr.push(unique_string(rng));
 }
-
-of.analyze(arr, { duplicates: true, occurrences: true });
+console.timeEnd();
+console.log(arr);
+of.analyze(arr, { occurrences: true, duplicates: true });

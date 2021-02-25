@@ -1,6 +1,6 @@
 import { random_engine } from './random_engine.js';
 
-export class xorshift128 extends random_engine {
+export class xorshift128plus extends random_engine {
 	private _x: number;
 	private _y: number;
 	private _z: number;

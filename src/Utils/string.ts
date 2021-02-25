@@ -34,12 +34,14 @@ export function invisible_string_generator(length: number): (rng: random_engine)
 
 export interface UniqueStringGeneratorOptions {
 	uniquePercentage?: number,
-	initialStrings?: readonly (readonly [string, number])[]
+	initialStrings?: readonly string[]
 }
 /**
  * Creates a unique random string generator
  * 
  * If generating a unique string fails, it returns any random string that fits within the current cycle, this way strings should be uniformly generated
+ * 
+ * WARNING: BAD PERFORMANCE COMPARED TO OTHER AFTER INITIAL CYCLE, IT IS RECOMMENDED TO USE optimized_unique_string_generator INSTEAD
  * 
  * @param charset The characters to be used in generating the random process
  * @param charCount The amount of times a character is added to (or string if the supplied charset is an array) the generated string, if every string/character is of length 1 this represents the length of the generated string
@@ -48,34 +50,27 @@ export interface UniqueStringGeneratorOptions {
  * @returns Function that returns a random string, takes a random number generator
  */
 export function unique_string_generator(charset: string | string[], charCount: number, { uniquePercentage = 0.99, initialStrings = undefined }: UniqueStringGeneratorOptions = { uniquePercentage: 0.99, initialStrings: undefined }): (rng: random_engine) => string {
-	const strings = new EMap<string, number>(initialStrings);
-	let cycle = 0;
-	let cycleCount = 0;
-	const uniqueMin = charset.length ** charCount * uniquePercentage;
+	const strings = new ESet<string>(initialStrings);
+	const min_unique = charset.length ** charCount * uniquePercentage;
 	return function unique_string(rng: random_engine): string {
 		let str = '';
-		for (let i = 0; i < charCount; ++i) str += charset[Math.floor(rng.next() / rng.RANGE * charset.length)];
-		const newCycle = cycleCount > uniqueMin;
-		if ((strings.get(str) ?? 0) <= cycle || newCycle) {
-			if (newCycle) {
-				cycle++;
-				cycleCount = 0;
-			}
-			strings.set(str, (strings.get(str) ?? 0) + 1);
-			return str;
-		}
-		return unique_string(rng);
+		do {
+			str = '';
+			for (let i = 0; i < charCount; ++i) str += charset[Math.floor(rng.next() / rng.RANGE * charset.length)];
+		} while (strings.has(str) && strings.size < min_unique);
+		if (strings.size >= min_unique) strings.clear();
+		strings.add(str);
+		return str;
 	};
 }
 
-export interface FastUniqueStringGeneratorOptions {
-	uniquePercentage?: number,
-	initialStrings?: readonly string[]
-}
 /**
  * Creates a fast unique random string generator, this doesn't generate all possible values (generates the amount of possible unique strings * uniquePercentage) but will be way more performant after first cycle of caching
  * 
- * If generating a unique string fails, it returns any random string that has been cached
+ * Caches all results for fast generation times after initial caching cycle
+ * If generating a unique string fails, it returns any random string that has been cached, after first caching will return very non-uniform results
+ * 
+ * WARNING: AFTER FIRST CACHE VERY NON-UNIFORM RESULTS WILL BE RETURNED, IT IS ADVISED TO USE opt_fast_unique_string_generator
  * 
  * @param charset The characters to be used in generating the random process
  * @param charCount The amount of times a character is added to (or string if the supplied charset is an array) the generated string, if every string/character is of length 1 this represents the length of the generated string
@@ -83,20 +78,24 @@ export interface FastUniqueStringGeneratorOptions {
  * @param initialStrings The unique strings the generator should be preloaded with, useful if the strings were previously generated and you need to continue generating unique strings
  * @returns Function that returns a random string, takes a random number generator
  */
-export function fast_unique_string_generator(charset: string | string[], charCount: number, { uniquePercentage = 0.99, initialStrings = undefined }: FastUniqueStringGeneratorOptions = { uniquePercentage: 0.99, initialStrings: undefined }): (rng: random_engine) => string {
+export function fast_unique_string_generator(charset: string | string[], charCount: number, { uniquePercentage = 0.99, initialStrings = undefined }: UniqueStringGeneratorOptions = { uniquePercentage: 0.99, initialStrings: undefined }): (rng: random_engine) => string {
 	const strings = new ESet<string>(initialStrings);
+	const cache = new ESet<string>(initialStrings);
 	let cached = false;
-	const uniqueMin = charset.length ** charCount * uniquePercentage;
+	const min_unique = charset.length ** charCount * uniquePercentage;
 	return function unique_string(rng: random_engine): string {
-		if (!cached) {
-			cached = strings.size > uniqueMin;
+		if (cached) {
 			let str = '';
-			for (let i = 0; i < charCount; ++i) str += charset[Math.floor(rng.next() / rng.RANGE * charset.length)]; cached = strings.size > uniqueMin;
-			if (strings.has(str)) return unique_string(rng);
+			do {
+				str = '';
+				for (let i = 0; i < charCount; ++i) str += charset[Math.floor(rng.next() / rng.RANGE * charset.length)];
+			} while (strings.has(str) && strings.size < min_unique);
+			if (strings.size >= min_unique) cached = true;
+			cache.add(str);
 			strings.add(str);
 			return str;
 		} else {
-			return strings.random()!;
+			return cache.random()!;
 		}
 	};
 }
