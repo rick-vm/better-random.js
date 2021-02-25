@@ -1,6 +1,6 @@
-import { random_engine_base } from './random_engine_base.js';
+import { random_engine } from './random_engine.js';
 
-export class default_random_engine extends random_engine_base {
+export class default_random_engine extends random_engine {
 	constructor() {
 		super(4294967295);
 	}

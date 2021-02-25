@@ -1,6 +1,6 @@
-import { random_engine_base } from './random_engine_base.js';
+import { random_engine } from './random_engine.js';
 
-export class xoroshiro128plus extends random_engine_base {
+export class xoroshiro128plus extends random_engine {
 	private _x: number;
 	private _y: number;
 	private _z: number;

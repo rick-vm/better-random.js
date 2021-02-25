@@ -1,4 +1,4 @@
-export abstract class random_engine_base {
+export abstract class random_engine {
 	public readonly MAX: number;
 	public readonly RANGE: number;
 
