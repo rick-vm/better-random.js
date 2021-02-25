@@ -5,7 +5,7 @@ import { unique_string_generator } from '../src/Utils/string.js';
 const of = new OutputFile('./output.txt');
 
 const rng = new xorshift128();
-const unique_string = unique_string_generator('012', 1);
+const unique_string = unique_string_generator('0123456789', 1);
 
 const arr: string[] = [];
 
