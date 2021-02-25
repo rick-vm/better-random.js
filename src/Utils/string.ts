@@ -84,15 +84,15 @@ export function fast_unique_string_generator(charset: string | string[], charCou
 	let cached = false;
 	const min_unique = charset.length ** charCount * uniquePercentage;
 	return function unique_string(rng: random_engine): string {
-		if (cached) {
+		if (!cached) {
 			let str = '';
 			do {
 				str = '';
 				for (let i = 0; i < charCount; ++i) str += charset[Math.floor(rng.next() / rng.RANGE * charset.length)];
 			} while (strings.has(str) && strings.size < min_unique);
-			if (strings.size >= min_unique) cached = true;
-			cache.add(str);
+			cached = strings.size >= min_unique;
 			strings.add(str);
+			cache.add(str);
 			return str;
 		} else {
 			return cache.random()!;
