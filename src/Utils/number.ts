@@ -1,24 +1,26 @@
 import { random_engine } from '../Engines/random_engine.js';
-import { ESet } from '../Engines/random_enginr.js';
+import { ESet } from './ESet.js';
 
-export function unique_int_generator(length: number): (rng: random_engine) => number;
-export function unique_int_generator(min: number, max: number): (rng: random_engine) => number;
-export function unique_int_generator(minOrLength: number, max?: number): (rng: random_engine) => number {
-	if (max) {
-	  const numbers = new ESet<number>();
-	  const range = max - minOrLength;
-		return function unique_int(rng: random_engine): number {
-		  let num: number;
-		  do {
-		    num = Math.floor((rng.next() / rng.RANGE * range) + minOrLength);
-		  } while (numbers.has(num));
-		  numbers.add(num);
-			return num;
-		};
-	} else {
-		return function unique_int(rng: random_engine): number {
+export interface UniqueNumbersGeneratorOptions {
+	uniquePercentage?: number,
+	initialNumbers?: readonly number[]
+}
+export function unique_int_generator(
+	min: number,
+	max: number,
+	{ uniquePercentage = 0.99, initialNumbers = undefined }: UniqueNumbersGeneratorOptions = { uniquePercentage: 0.99, initialNumbers: undefined }
+): (rng: random_engine) => number {
+	const numbers = new ESet<number>(initialNumbers);
+	const range = max - min;
+	const min_unique = range * uniquePercentage;
 
-		}
-	}
-
+	return function unique_int(rng: random_engine): number {
+		if (numbers.size > min_unique) numbers.clear();
+		let num: number;
+		do {
+			num = Math.floor((rng.next() / rng.RANGE * range) + min);
+		} while (numbers.has(num));
+		numbers.add(num);
+		return num;
+	};
 }

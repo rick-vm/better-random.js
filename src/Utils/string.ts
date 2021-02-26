@@ -46,16 +46,21 @@ export interface UniqueStringGeneratorOptions {
  * @param initialStrings The unique strings the generator should be preloaded with, useful if the strings were previously generated and you need to continue generating unique strings
  * @returns Function that returns a random string, takes a random number generator
  */
-export function unique_string_generator(charset: string | string[], charCount: number, { uniquePercentage = 0.99, initialStrings = undefined }: UniqueStringGeneratorOptions = { uniquePercentage: 0.99, initialStrings: undefined }): (rng: random_engine) => string {
+export function unique_string_generator(
+	charset: string | string[],
+	charCount: number,
+	{ uniquePercentage = 0.99, initialStrings = undefined }: UniqueStringGeneratorOptions = { uniquePercentage: 0.99, initialStrings: undefined }
+): (rng: random_engine) => string {
 	const strings = new ESet<string>(initialStrings);
 	const min_unique = charset.length ** charCount * uniquePercentage;
+
 	return function unique_string(rng: random_engine): string {
-		let str = '';
+		if (strings.size > min_unique) strings.clear();
+		let str: string;
 		do {
 			str = '';
 			for (let i = 0; i < charCount; ++i) str += charset[Math.floor(rng.next() / rng.RANGE * charset.length)];
-		} while (strings.has(str) && strings.size < min_unique);
-		if (strings.size >= min_unique) strings.clear();
+		} while (strings.has(str));
 		strings.add(str);
 		return str;
 	};
