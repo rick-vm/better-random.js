@@ -15,7 +15,7 @@ export function unique_int_generator(
 	const min_unique = range * uniquePercentage;
 
 	return function unique_int(rng: random_engine): number {
-		if (numbers.size > min_unique) numbers.clear();
+		if (numbers.size === min_unique) numbers.clear();
 		let num: number;
 		do {
 			num = Math.floor((rng.next() / rng.RANGE * range) + min);

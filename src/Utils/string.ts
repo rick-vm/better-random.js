@@ -55,7 +55,7 @@ export function unique_string_generator(
 	const min_unique = charset.length ** charCount * uniquePercentage;
 
 	return function unique_string(rng: random_engine): string {
-		if (strings.size > min_unique) strings.clear();
+		if (strings.size === min_unique) strings.clear();
 		let str: string;
 		do {
 			str = '';
