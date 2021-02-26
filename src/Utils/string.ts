@@ -4,6 +4,7 @@ import { ESet } from './ESet.js';
 /**
  * Creates a random invisible (invisible unicode characters) string generator
  * 
+ * @function
  * @param charset The characters to be used in generating the random process
  * @param charCount The amount of times a character is added to (or string if the supplied charset is an array) the generated string, if every string/character is of length 1 this represents the length of the generated string
  * @returns Function that returns a random string, takes a random number generator
@@ -19,6 +20,7 @@ export function random_string_generator(charset: string | string[], charCount: n
 /**
  * Creates a random invisible (invisible unicode characters) string generator
  * 
+ * @function
  * @param length The length of the generated string
  * @returns Function that returns a random invisible string, takes a random number generator
  */
@@ -41,6 +43,7 @@ export interface UniqueStringGeneratorOptions {
  * 
  * If generating a unique string fails, it retries untill it finds a unique string, when the percentage of unique strings has been hit, the strings get reset
  * 
+ * @function
  * @param min The characters to be used in generating the random process
  * @param charCount The amount of times a character is added to (or string if the supplied charset is an array) the generated string, if every string/character is of length 1 this represents the length of the generated string
  * @param {Object} options Any optional options for specifying behaviour like uniqueness
