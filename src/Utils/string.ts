@@ -35,15 +35,17 @@ export interface UniqueStringGeneratorOptions {
 	uniquePercentage?: number,
 	initialStrings?: readonly string[]
 }
+
 /**
  * Creates a unique random string generator
  * 
- * If generating a unique string fails, it returns any random string that fits within the current cycle, this way strings should be uniformly generated
+ * If generating a unique string fails, it retries untill it finds a unique string, when the percentage of unique strings has been hit, the strings get reset
  * 
- * @param charset The characters to be used in generating the random process
+ * @param min The characters to be used in generating the random process
  * @param charCount The amount of times a character is added to (or string if the supplied charset is an array) the generated string, if every string/character is of length 1 this represents the length of the generated string
- * @param uniquePercentage Number between 0 and 1, the percentage of unique strings out of all possible unique strings that at least have to be generated before repeating once. Higher values mean longer generation times but less unique values
- * @param initialStrings The unique strings the generator should be preloaded with, useful if the strings were previously generated and you need to continue generating unique strings
+ * @param {Object} options Any optional options for specifying behaviour like uniqueness
+ * @param options.uniquePercentage A value between 0 and 1, the percentage of unique strings out of all possible unique strings that at least have to be generated before repeating once. Higher values mean longer generation times but less unique values
+ * @param options.initialStrings The unique strings the generator should be preloaded with, useful if the strings were previously generated and you need to continue generating unique strings
  * @returns Function that returns a random string, takes a random number generator
  */
 export function unique_string_generator(
@@ -52,7 +54,7 @@ export function unique_string_generator(
 	{ uniquePercentage = 0.99, initialStrings = undefined }: UniqueStringGeneratorOptions = { uniquePercentage: 0.99, initialStrings: undefined }
 ): (rng: random_engine) => string {
 	const strings = new ESet<string>(initialStrings);
-	const min_unique = charset.length ** charCount * uniquePercentage;
+	const min_unique = Math.floor(charset.length ** charCount * uniquePercentage);
 
 	return function unique_string(rng: random_engine): string {
 		if (strings.size === min_unique) strings.clear();
