@@ -1,4 +1,4 @@
-export * as dists from './Distributions';
-export * as engines from './Engines';
-export * as maps from './Maps';
-export * as utils from './Utils';
+export * as dists from './distributions';
+export * as engines from './engines';
+export * as maps from './maps';
+export * as utils from './utils';
