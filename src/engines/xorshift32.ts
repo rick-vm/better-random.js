@@ -22,7 +22,7 @@ export class xorshift32 extends base_random_engine {
 	 * @since 1.0.0
 	 */
 	next(): number {
-		this._x = (this._x ^ this._x << 13) ^ (this._x >> 17) ^ (this._x << 5);
+		this._x = (this._x ^ this._x << 13) ^ (this._x >>> 17) ^ (this._x << 5);
 		return this._x >>> 0;
 	}
 

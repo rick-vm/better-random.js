@@ -4,5 +4,15 @@
 	"theme": "node_modules/typedoc-neo-theme/bin/default",
 	"tsconfig": "tsconfig.json",
 	"entryPoints": "./src/index.ts",
-	"readme": "README.md"
+	"readme": "README.md",
+	"outline": [{
+		"Engines": "engines",
+		"Distributions": "dists",
+		"Maps": "maps",
+		"Utilities": "utils"
+	}],
+	"source": [{
+		"path": "https://github.com/TheNonStopGamer/rng-plus.js/tree/master/src",
+		"line": "L"
+	}]
 }
