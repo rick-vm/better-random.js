@@ -54,12 +54,12 @@ export class EMap<K, V> extends Map<K, V> {
 
 	public get keyArray(): K[] {
 		if (!this._keyArray) this._keyArray = [...this.keys()];
-		return new this._keyArray;
+		return this._keyArray;
 	}
 
 	public get entryArray(): [K, V][] {
 		if (!this._entryArray) this._entryArray = [...this.entries()];
-		return new this._entryArray;
+		return this._entryArray;
 	}
 
 	public random(): V | undefined {
