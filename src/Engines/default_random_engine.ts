@@ -1,11 +1,23 @@
-import { random_engine } from './random_engine.js';
+import { base_random_engine } from './base_random_engine.js';
 
-export class default_random_engine extends random_engine {
+/**
+ * The default implementation of Math.random
+ * 
+ * @since 1.0.0
+ */
+export class default_random_engine extends base_random_engine {
 	constructor() {
-		super(4294967295);
+		super(0);
 	}
 
-	next(): number {
-		return Math.random() * 4294967296;
+	/**
+	 * Generates the next number in the PRNG sequence and updates the seed
+	 * 
+	 * @returns {number}
+	 * 
+	 * @since 1.0.0
+	 */
+	public next(): number {
+		return Math.random();
 	}
 }

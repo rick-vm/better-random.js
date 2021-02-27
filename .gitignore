@@ -3,3 +3,7 @@ package-lock.json
 
 # ignore compiled js
 build/
+
+# ignore documentation
+docs/
+md_docs/

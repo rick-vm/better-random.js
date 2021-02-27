@@ -1,20 +1,38 @@
-import { random_engine } from './random_engine.js';
+import { base_random_engine } from './base_random_engine.js';
 
-export class xoroshiro128plus extends random_engine {
+/**
+ * Xoroshiro128+ PRNG algorithm
+ * 
+ * @since 1.0.0
+ */
+export class xoroshiro128plus extends base_random_engine {
 	private _x: number;
 	private _y: number;
 	private _z: number;
 	private _w: number;
 
-	constructor(a: number = Math.random() * Math.pow(2, 32), b: number = Math.random() * Math.pow(2, 32), c: number = Math.random() * Math.pow(2, 32), d: number = Math.random() * Math.pow(2, 32)) {
+	/**
+	 * @param x - The first 32 bits of the seed
+	 * @param y - The second 32 bit integer of the seed
+	 * @param z - The third 32 bit integer of the seed
+	 * @param w - The fourth 32 bit integer of the seed
+	 */
+	constructor(x: number = Math.random() * Math.pow(2, 32), y: number = Math.random() * Math.pow(2, 32), z: number = Math.random() * Math.pow(2, 32), w: number = Math.random() * Math.pow(2, 32)) {
 		super(4294967295);
 
-		this._x = a >>> 0;
-		this._y = b >>> 0;
-		this._z = c >>> 0;
-		this._w = d >>> 0;
+		this._x = x >>> 0;
+		this._y = y >>> 0;
+		this._z = z >>> 0;
+		this._w = w >>> 0;
 	}
 
+	/**
+	 * Generates the next number in the PRNG sequence and updates the seed
+	 * 
+	 * @returns {number}
+	 * 
+	 * @since 1.0.0
+	 */
 	next(): number {
 		const z = this._z ^ this._x;
 		const w = this._w ^ this._y;
@@ -28,6 +46,16 @@ export class xoroshiro128plus extends random_engine {
 		return t >>> 0;
 	}
 
+	/**
+	 * Provides the PRNG with a new seed
+	 * 
+	 * @param x - The first 32 bits of the seed
+	 * @param y - The second 32 bit integer of the seed
+	 * @param z - The third 32 bit integer of the seed
+	 * @param w - The fourth 32 bit integer of the seed
+	 * 
+	 * @since 1.0.0
+	 */
 	seed(x: number = Math.random() * Math.pow(2, 31), y: number = Math.random() * Math.pow(2, 31), z: number = Math.random() * Math.pow(2, 31), w: number = Math.random() * Math.pow(2, 31)): void {
 		this._x = x >>> 0;
 		this._y = y >>> 0;

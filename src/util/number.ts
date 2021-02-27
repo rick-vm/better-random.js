@@ -1,4 +1,4 @@
-import { random_engine } from '../Engines/random_engine.js';
+import { base_random_engine } from '../engines/base_random_engine.js';
 import { ESet } from './ESet.js';
 
 export interface UniqueNumbersGeneratorOptions {
@@ -23,12 +23,12 @@ export function unique_int_generator(
 	min: number,
 	max: number,
 	{ uniquePercentage = 0.99, initialNumbers = undefined }: UniqueNumbersGeneratorOptions = { uniquePercentage: 0.99, initialNumbers: undefined }
-): (rng: random_engine) => number {
+): (rng: base_random_engine) => number {
 	const numbers = new ESet<number>(initialNumbers);
 	const range = max - min;
 	const min_unique = Math.floor(range * Math.min(uniquePercentage, 1));
 
-	return function unique_int(rng: random_engine): number {
+	return function unique_int(rng: base_random_engine): number {
 		if (numbers.size === min_unique) numbers.clear();
 		let num: number;
 		do {

@@ -5,3 +5,6 @@ tsconfig.json
 .eslintignore
 .eslintrc.json
 test/
+docs/
+src/
+md_docs/

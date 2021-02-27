@@ -1,25 +1,8 @@
-import { PathLike, createWriteStream, WriteStream } from 'fs';
-
-export interface OutputFileOptions {
-	log?: boolean;
-}
-
-export interface AnalyzeOptions {
-	occurrences?: boolean,
-	duplicates?: boolean
-}
-
-export interface AnalyzeReturn<T> {
-	occurrences?: Map<T, number>,
-	duplicates?: Map<T, number>
-}
+import { createWriteStream } from 'fs';
 
 export default class OutputFile {
-	private _writeStream: WriteStream;
-	private _outputCounter = 0;
-	private readonly _log: boolean;
 
-	constructor(path: PathLike, { log = true }: OutputFileOptions = { log: true }) {
+	constructor(path, { log = true } = { log: true }) {
 		path = './test/' + path.toString().substring(2);
 		this._writeStream = createWriteStream(path);
 
@@ -30,7 +13,7 @@ export default class OutputFile {
 		console.log('\x1b[1m===============================================\n', '\x1b[0m');
 	}
 
-	public output(...outputs: (string | number)[]): void {
+	output(...outputs) {
 		for (let output of outputs) {
 			if (this._log) console.log(output);
 			output = new Date() + '\n' + output;
@@ -40,7 +23,7 @@ export default class OutputFile {
 		}
 	}
 
-	public clearOutput(...outputs: (string | number)[]): void {
+	clearOutput(...outputs) {
 		for (let output of outputs) {
 			if (this._log) console.log(output);
 			output = new Date() + '\n' + output;
@@ -51,14 +34,14 @@ export default class OutputFile {
 		}
 	}
 
-	public analyze<T>(
-		data: T[],
-		{ occurrences: entryOccurrence = false, duplicates = false }: AnalyzeOptions = { occurrences: false, duplicates: false }
-	): AnalyzeReturn<T> {
-		const returnVal: AnalyzeReturn<T> = {};
+	analyze(
+		data,
+		{ occurrences: entryOccurrence = false, duplicates = false } = { occurrences: false, duplicates: false }
+	) {
+		const returnVal = {};
 
 		if (entryOccurrence) {
-			const map = new Map<T, number>();
+			const map = new Map();
 
 			for (const entry of data) {
 				map.set(entry, (map.get(entry) || 0) + 1);
@@ -73,14 +56,14 @@ export default class OutputFile {
 			returnVal.occurrences = new Map(entries);
 
 			const highest = Math.max(...map.values());
-			const longestKey = Math.max(...[...map.keys()].map(key => (key + '').length));
+			const longestKey = Math.max(...[...map.keys()].map(key => String(key).length));
 
-			this.output('----------------------------\nOccurrences\n----------------------------\n' + `${('Entry - '.padEnd(longestKey) + 'Indicator Bar').padEnd(longestKey + 103) + ' - Occurrences'}\n` + entries.map(entry => ((entry[0] + ' - ').padEnd(longestKey + 3) + '='.repeat(Math.ceil(entry[1] / (highest / 100)))).padEnd(longestKey + 103) + ' - ' + entry[1]).join('\n'));
+			this.output('----------------------------\nOccurrences\n----------------------------\n' + `${('Entry - '.padEnd(longestKey) + 'Indicator Bar').padEnd(longestKey + 103) + ' - Occurrences'}\n` + entries.map(entry => ((entry[0] + ' - ').padEnd(longestKey + 3) + '='.repeat(Math.round(entry[1] / (highest / 100)))).padEnd(longestKey + 103) + ' - ' + entry[1]).join('\n'));
 		}
 
 		if (duplicates) {
-			const arr: T[] = [];
-			const map = new Map<T, number>();
+			const arr = [];
+			const map = new Map();
 
 			for (const entry of data) {
 				if (arr.includes(entry)) {
@@ -104,3 +87,32 @@ export default class OutputFile {
 		return returnVal;
 	}
 }
+
+import random from '../build/Engines';
+
+const of = new OutputFile('./output.txt', { log: true });
+
+const rng = new xorshift64();
+const dist = uniform_int_distribution(1, 10, { inclusiveEnd: true });
+
+let arr = [];
+
+console.time();
+for (let i = 0; i < 10000000; ++i) {
+	arr.push(dist(rng));
+}
+console.timeEnd();
+
+of.analyze(arr, { occurrences: true, duplicates: false });
+
+arr = [];
+
+console.time();
+for (let i = 0; i < 10000000; ++i) {
+	arr.push(dist(rng));
+}
+console.timeEnd();
+
+of.analyze(arr, { occurrences: true, duplicates: false });
+
+console.log(0b11111111111111111111111111111111.toString(2));
