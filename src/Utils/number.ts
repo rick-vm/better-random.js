@@ -9,12 +9,12 @@ export interface UniqueNumbersGeneratorOptions {
 /**
  * Creates a unique random number generator
  * 
- * If generating a unique number fails, it retries untill it finds a unique number, when the percentage of unique numbers has been exceeded, the cached numbers get reset
+ * If generating a unique number fails, it retries until it finds a unique number, when the percentage of unique numbers has been exceeded, the cached numbers get reset
  * 
  * @function
- * @param min The lowest number generated, inclusive
- * @param max The highest number generated, exclusive
- * @param {Object} options Any optional options for specifying behaviour like uniqueness
+ * @param min The lower boundry generated, inclusive
+ * @param max The upper boundry generated, exclusive
+ * @param options Options for specifying behaviour like uniqueness
  * @param options.uniquePercentage A value between 0 and 1, the percentage of unique numbers out of all possible unique numbers that at least have to be generated before repeating once. Higher values mean longer generation times but less unique values
  * @param options.initialNumbers The unique numbers the generator should be preloaded with, useful if the numbers were previously generated and you need to continue generating unique numbers
  * @returns Function that returns a random number, takes a random number generator

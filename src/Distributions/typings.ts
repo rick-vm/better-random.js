@@ -1,8 +1,8 @@
 export interface DistOptions {
-  inclusiveEnd?: boolean,
-  inclusiveStart?: boolean
+  inclusiveStart?: boolean,
+  inclusiveEnd?: boolean
 }
 
 export interface NormalOptions {
-  standard_deviation?: number
+  standardDeviation?: number
 }
