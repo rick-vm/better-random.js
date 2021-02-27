@@ -1,5 +1,5 @@
 /**
- * Represents a 64 bit integer with a hi and lo 32 bit integer
+ * Represents a 64 bit integer by a hi and a lo 32 bit integer
  * 
  * @since 1.0.0
  */
@@ -8,8 +8,8 @@ export class int64 {
 	public lo = 0;
 
 	/**
-	 * @param hi The high (right-most) 32 bits
-	 * @param lo The low (left-most) 32 bits
+	 * @param hi The high (left-most) 32 bits
+	 * @param lo The low (right-most) 32 bits
 	 */
 	constructor(hi = 0, lo = 0) {
 		this.hi = hi >>> 0;

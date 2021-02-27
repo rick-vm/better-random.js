@@ -1,5 +1,5 @@
-import { base_random_engine } from '../../engines/base_random_engine.js';
-import { DistOptions, DistributionFunction } from '../typings.js';
+import { base_random_engine } from '../engines/base_random_engine.js';
+import { DistOptions, DistributionFunction } from './typings.js';
 
 /**
  * Creates a floating point uniform distribution.

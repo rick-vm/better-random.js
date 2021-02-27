@@ -1,5 +1,5 @@
-import { base_random_engine } from '../../engines/base_random_engine.js';
-import { DistOptions, NormalOptions } from '../typings.js';
+import { base_random_engine } from '../engines/base_random_engine.js';
+import { MapOptions, NormalOptions } from './typings.js';
 import { uniform_real_distribution } from '../distributions/uniform_real_distribution.js';
 
 const dist = uniform_real_distribution(0, 1, { inclusiveStart: false });
@@ -23,7 +23,7 @@ export function normal_int_map(
 	rng: base_random_engine,
 	min: number,
 	max: number,
-	{ inclusiveStart = true, inclusiveEnd = false, standardDeviation = 2 }: DistOptions & NormalOptions = { inclusiveStart: true, inclusiveEnd: false, standardDeviation: 2 }
+	{ inclusiveStart = true, inclusiveEnd = false, standardDeviation = 2 }: MapOptions & NormalOptions = { inclusiveStart: true, inclusiveEnd: false, standardDeviation: 2 }
 ): number {
 	min += inclusiveStart ? 0 : 1;
 	let res = Math.sqrt(-standardDeviation * Math.log(dist(rng))) * Math.cos((standardDeviation * Math.PI) * dist(rng)) / 10;

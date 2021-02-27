@@ -1,5 +1,3 @@
-import { Vector } from './Vector.js';
-
 /**
  * An enhanced Map, used internally
  * 
@@ -51,17 +49,17 @@ export class EMap<K, V> extends Map<K, V> {
 
 	public get array(): V[] {
 		if (!this._array) this._array = [...this.values()];
-		return new Vector(undefined, this._array);
+		return this._array;
 	}
 
 	public get keyArray(): K[] {
 		if (!this._keyArray) this._keyArray = [...this.keys()];
-		return new Vector(undefined, this._keyArray);
+		return new this._keyArray;
 	}
 
 	public get entryArray(): [K, V][] {
 		if (!this._entryArray) this._entryArray = [...this.entries()];
-		return new Vector(undefined, this._entryArray);
+		return new this._entryArray;
 	}
 
 	public random(): V | undefined {

@@ -1,5 +1,3 @@
-import { Vector } from './Vector.js';
-
 export class ESet<V> extends Set<V> {
 	private _array: V[] | undefined;
 	private _entryArray: [V, V][] | undefined;
@@ -28,12 +26,12 @@ export class ESet<V> extends Set<V> {
 
 	public get array(): V[] {
 		if (!this._array) this._array = [...this.values()];
-		return new Vector(undefined, this._array);
+		return this._array;
 	}
 
 	public get entryArray(): [V, V][] {
 		if (!this._entryArray) this._entryArray = [...this.entries()];
-		return new Vector(undefined, this._entryArray);
+		return this._entryArray;
 	}
 
 	public random(): V | undefined {
