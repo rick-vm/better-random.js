@@ -1,10 +1,22 @@
 /**
- * Represents a 64 bit integer by a hi and a lo 32 bit integer
+ * Represents a 64 bit integer by a hi and a lo 32 bit integer.
  * 
- * @since 1.0.0
+ * THIS IS A WORK IN PROGRESS.
+ * 
+ * It is nowhere near finished as I'm still figuring out how to do all this.
  */
 export class int64 {
+	/**
+	 * The high (left-most) 32 bits.
+	 * 
+	 * @since 1.0.0
+	 */
 	public hi = 0;
+	/**
+	 * The low (right-most) 32 bits.
+	 * 
+	 * @since 1.0.0
+	 */
 	public lo = 0;
 
 	/**
@@ -14,22 +26,5 @@ export class int64 {
 	constructor(hi = 0, lo = 0) {
 		this.hi = hi >>> 0;
 		this.lo = lo >>> 0;
-	}
-
-	/**
-	 * Add an integer or int64 to this instance
-	 * 
-	 * @since 1.0.0 
-	 */
-	public add(int: number): this;
-	public add(int: int64): this;
-	public add(int: number | int64): this {
-		if (int instanceof int64) {
-			this.lo += int.lo;
-			this.hi += int.hi;
-		} else {
-			this.lo += int = (4294967295 - this.lo);
-		}
-		return this;
 	}
 }

@@ -15,8 +15,6 @@ const dist = uniform_real_distribution(0, 1, { inclusiveStart: false });
  * @param options.inclusiveEnd - Wether max should be inclusive
  * @param options.standardDeviation - The standard deviation
  * 
- * @returns {number}
- * 
  * @since 1.0.0
  */
 export function normal_real_map(

@@ -10,7 +10,7 @@ import { DistOptions, DistributionFunction } from './typings.js';
  * @param options.inclusiveStart - Wether min should be inclusive
  * @param options.inclusiveEnd - Wether max should be inclusive
  * 
- * @returns {DistributionFunction} The distribution function
+ * @returns The distribution function.
  * 
  * @since 1.0.0
  */

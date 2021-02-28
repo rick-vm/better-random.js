@@ -24,7 +24,7 @@ export abstract class base_random_engine {
 	 * 
 	 * @abstract
 	 * 
-	 * @returns The generated number
+	 * @returns The generated number.
 	 * 
 	 * @since 1.0.0
 	 */

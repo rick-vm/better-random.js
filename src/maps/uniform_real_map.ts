@@ -11,8 +11,6 @@ import { MapOptions } from './typings.js';
  * @param options.inclusiveStart - Wether min should be inclusive
  * @param options.inclusiveEnd - Wether max should be inclusive
  * 
- * @returns {number}
- * 
  * @since 1.0.0
  */
 export function uniform_real_map(

@@ -14,7 +14,7 @@ const dist = uniform_real_distribution(0, 1, { inclusiveStart: false });
  * @param options.inclusiveEnd - Wether max should be inclusive
  * @param options.standardDeviation - The standard deviation
  * 
- * @returns {DistributionFunction} The distribution function
+ * @returns The distribution function.
  * 
  * @since 1.0.0
  */

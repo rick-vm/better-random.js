@@ -15,3 +15,7 @@ or
 ```js
 const random = require('rng-plus.js');
 ```
+
+### Documentation
+
+The documentation can be found [here](https://thenonstopgamer.github.io/rng-plus.js/index.html)

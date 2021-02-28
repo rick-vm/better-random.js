@@ -1,5 +1,10 @@
 import { EMap } from './EMap.js';
 
+/**
+ * An enhanced array.
+ * 
+ * @since 1.0.0
+ */
 export class Vector<T> extends Array {
 	constructor(size?: number, entries?: T[]) {
 		super(size);

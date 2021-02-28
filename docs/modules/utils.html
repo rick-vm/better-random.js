@@ -39,8 +39,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -86,45 +84,196 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="utils.html#numbergenerator" class="tsd-kind-icon">Number<wbr>Generator</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="utils.html#stringgenerator" class="tsd-kind-icon">String<wbr>Generator</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter"><a href="utils.html#entry" class="tsd-kind-icon">entry</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#invisible_string_generator" class="tsd-kind-icon">invisible_<wbr>string_<wbr>generator</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter"><a href="utils.html#key" class="tsd-kind-icon">key</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter"><a href="utils.html#random_entry" class="tsd-kind-icon">random_<wbr>entry</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter"><a href="utils.html#random_key" class="tsd-kind-icon">random_<wbr>key</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#random_string_generator" class="tsd-kind-icon">random_<wbr>string_<wbr>generator</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter"><a href="utils.html#random_value" class="tsd-kind-icon">random_<wbr>value</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#unique_int_generator" class="tsd-kind-icon">unique_<wbr>int_<wbr>generator</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#unique_string_generator" class="tsd-kind-icon">unique_<wbr>string_<wbr>generator</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter"><a href="utils.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="numbergenerator" class="tsd-anchor"></a>
+					<h3>Number<wbr>Generator</h3>
+					<div class="tsd-signature tsd-kind-icon">Number<wbr>Generator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/number.ts#L33">utils/number.ts:33</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The return value of all string generators.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>A random engine</p>
+							</dd>
+							<dt>since</dt>
+							<dd><p>1.0.0</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="stringgenerator" class="tsd-anchor"></a>
+					<h3>String<wbr>Generator</h3>
+					<div class="tsd-signature tsd-kind-icon">String<wbr>Generator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/string.ts#L11">utils/string.ts:11</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The return value of all string generators.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>A random engine</p>
+							</dd>
+							<dt>since</dt>
+							<dd><p>1.0.0</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-					<a name="entry" class="tsd-anchor"></a>
-					<h3>entry</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">entry<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">]</span></li>
-						<li class="tsd-signature tsd-kind-icon">entry&lt;V&gt;<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">[]</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">]</span></li>
-						<li class="tsd-signature tsd-kind-icon">entry&lt;K, V&gt;<span class="tsd-signature-symbol">(</span>map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-						<li class="tsd-signature tsd-kind-icon">entry&lt;V&gt;<span class="tsd-signature-symbol">(</span>set<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="invisible_string_generator" class="tsd-anchor"></a>
+					<h3>invisible_<wbr>string_<wbr>generator</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">invisible_<wbr>string_<wbr>generator<span class="tsd-signature-symbol">(</span>length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="utils.html#stringgenerator" class="tsd-signature-type" data-tsd-kind="Type alias">StringGenerator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L27">src/utils/iterable.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/string.ts#L62">utils/string.ts:62</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a random invisible (invisible unicode characters) string generator</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>length: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The length of the generated string</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="utils.html#stringgenerator" class="tsd-signature-type" data-tsd-kind="Type alias">StringGenerator</a></h4>
+							<p>The generator function.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+					<a name="random_entry" class="tsd-anchor"></a>
+					<h3>random_<wbr>entry</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>entry<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">]</span></li>
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>entry&lt;V&gt;<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">[]</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">]</span></li>
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>entry&lt;K, V&gt;<span class="tsd-signature-symbol">(</span>map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>entry&lt;V&gt;<span class="tsd-signature-symbol">(</span>set<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L115">utils/iterable.ts:115</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random entry from a string.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>str: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The string to retrieve a random entry from</p>
+									</div>
 								</li>
 								<li>
 									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">]</span></h4>
@@ -132,9 +281,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L28">src/utils/iterable.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L124">utils/iterable.ts:124</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random entry from an array.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
@@ -145,9 +304,15 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>arr: <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The array to retrieve a random entry from</p>
+									</div>
 								</li>
 								<li>
 									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">]</span></h4>
@@ -155,9 +320,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L29">src/utils/iterable.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L133">utils/iterable.ts:133</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random entry from a Map.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
@@ -171,9 +346,15 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>map: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The map to retrieve a random entry from</p>
+									</div>
 								</li>
 								<li>
 									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
@@ -181,9 +362,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L30">src/utils/iterable.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L142">utils/iterable.ts:142</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random entry from a Set.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
@@ -194,79 +385,60 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>set: <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The set to retrieve a random entry from</p>
+									</div>
 								</li>
 								<li>
 									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
-					<a name="invisible_string_generator" class="tsd-anchor"></a>
-					<h3>invisible_<wbr>string_<wbr>generator</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">invisible_<wbr>string_<wbr>generator<span class="tsd-signature-symbol">(</span>length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/string.ts#L28">src/utils/string.ts:28</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>length: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></h4>
-							<ul class="tsd-parameters">
-								<li class="tsd-parameter-signature">
-									<ul class="tsd-signatures tsd-kind-type-literal">
-										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-									</ul>
-									<ul class="tsd-descriptions">
-										<li class="tsd-description">
-											<h4 class="tsd-parameters-title">Parameters</h4>
-											<ul class="tsd-parameters">
-												<li>
-													<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
-												</li>
-											</ul>
-											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-					<a name="key" class="tsd-anchor"></a>
-					<h3>key</h3>
+					<a name="random_key" class="tsd-anchor"></a>
+					<h3>random_<wbr>key</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">key<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-						<li class="tsd-signature tsd-kind-icon">key<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-						<li class="tsd-signature tsd-kind-icon">key&lt;K&gt;<span class="tsd-signature-symbol">(</span>map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-						<li class="tsd-signature tsd-kind-icon">key&lt;K&gt;<span class="tsd-signature-symbol">(</span>set<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>key<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>key<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>key&lt;K&gt;<span class="tsd-signature-symbol">(</span>map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>key&lt;K&gt;<span class="tsd-signature-symbol">(</span>set<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L15">src/utils/iterable.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L63">utils/iterable.ts:63</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random key from a string.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>str: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The string to retrieve a random key from</p>
+									</div>
 								</li>
 								<li>
 									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
@@ -274,16 +446,32 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L16">src/utils/iterable.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L72">utils/iterable.ts:72</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random key from an array.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>arr: <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The array to retrieve a random key from</p>
+									</div>
 								</li>
 								<li>
 									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
@@ -291,9 +479,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L17">src/utils/iterable.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L81">utils/iterable.ts:81</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random key from a Map.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
@@ -304,9 +502,15 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>map: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The map to retrieve a random key from</p>
+									</div>
 								</li>
 								<li>
 									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">K</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
@@ -314,9 +518,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L18">src/utils/iterable.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L90">utils/iterable.ts:90</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random key from a Set.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
@@ -327,9 +541,15 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>set: <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The set to retrieve a random key from</p>
+									</div>
 								</li>
 								<li>
 									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">K</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
@@ -340,23 +560,19 @@
 					<a name="random_string_generator" class="tsd-anchor"></a>
 					<h3>random_<wbr>string_<wbr>generator</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">random_<wbr>string_<wbr>generator<span class="tsd-signature-symbol">(</span>charset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, charCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>string_<wbr>generator<span class="tsd-signature-symbol">(</span>charset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, charCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="utils.html#stringgenerator" class="tsd-signature-type" data-tsd-kind="Type alias">StringGenerator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/string.ts#L12">src/utils/string.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/string.ts#L43">utils/string.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Creates a random invisible (invisible unicode characters) string generator</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>function</dt>
-									<dd></dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -373,26 +589,170 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></h4>
-							<p>Function that returns a random string, takes a random number generator</p>
+							<h4 class="tsd-returns-title">Returns <a href="utils.html#stringgenerator" class="tsd-signature-type" data-tsd-kind="Type alias">StringGenerator</a></h4>
+							<p>The generator function.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+					<a name="random_value" class="tsd-anchor"></a>
+					<h3>random_<wbr>value</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>value<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>value&lt;V&gt;<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">[]</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>value&lt;V&gt;<span class="tsd-signature-symbol">(</span>map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">random_<wbr>value&lt;V&gt;<span class="tsd-signature-symbol">(</span>set<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L11">utils/iterable.ts:11</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random value from a string.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
-								<li class="tsd-parameter-signature">
-									<ul class="tsd-signatures tsd-kind-type-literal">
-										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-									</ul>
-									<ul class="tsd-descriptions">
-										<li class="tsd-description">
-											<h4 class="tsd-parameters-title">Parameters</h4>
-											<ul class="tsd-parameters">
-												<li>
-													<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
-												</li>
-											</ul>
-											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-										</li>
-									</ul>
+								<li>
+									<h5>str: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The string to retrieve a random value from</p>
+									</div>
+								</li>
+								<li>
+									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
 								</li>
 							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L20">utils/iterable.ts:20</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random value from an array.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>V</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>arr: <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The array to retrieve a random value from</p>
+									</div>
+								</li>
+								<li>
+									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L29">utils/iterable.ts:29</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random value from a Map.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>V</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>map: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The map to retrieve a random value from</p>
+									</div>
+								</li>
+								<li>
+									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/iterable.ts#L38">utils/iterable.ts:38</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random value from a Set.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>V</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>set: <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The set to retrieve a random value from</p>
+									</div>
+								</li>
+								<li>
+									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A random engine</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -406,17 +766,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/number.ts#L22">src/utils/number.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/number.ts#L50">utils/number.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates a unique random number generator</p>
+									<p>Creates a unique random number generator.</p>
 								</div>
-								<p>If generating a unique number fails, it retries until it finds a unique number, when the percentage of unique numbers has been exceeded, the cached numbers get reset</p>
+								<p>If generating a unique number fails, it retries until it finds a unique number, when the percentage of unique numbers has been exceeded, the cached numbers get reset.</p>
 								<dl class="tsd-comment-tags">
-									<dt>function</dt>
-									<dd></dd>
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -438,7 +799,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span></h4>
-							<p>Function that returns a random number, takes a random number generator</p>
+							<p>The generator function.</p>
 							<ul class="tsd-parameters">
 								<li class="tsd-parameter-signature">
 									<ul class="tsd-signatures tsd-kind-type-literal">
@@ -464,13 +825,13 @@
 					<a name="unique_string_generator" class="tsd-anchor"></a>
 					<h3>unique_<wbr>string_<wbr>generator</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">unique_<wbr>string_<wbr>generator<span class="tsd-signature-symbol">(</span>charset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, charCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, __namedParameters<span class="tsd-signature-symbol">?: </span><a href="../interfaces/utils.uniquestringgeneratoroptions.html" class="tsd-signature-type" data-tsd-kind="Interface">UniqueStringGeneratorOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">unique_<wbr>string_<wbr>generator<span class="tsd-signature-symbol">(</span>charset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, charCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, __namedParameters<span class="tsd-signature-symbol">?: </span><a href="../interfaces/utils.uniquestringgeneratoroptions.html" class="tsd-signature-type" data-tsd-kind="Interface">UniqueStringGeneratorOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="utils.html#stringgenerator" class="tsd-signature-type" data-tsd-kind="Type alias">StringGenerator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/string.ts#L54">src/utils/string.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/string.ts#L86">utils/string.ts:86</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -481,6 +842,9 @@
 								<dl class="tsd-comment-tags">
 									<dt>function</dt>
 									<dd></dd>
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -501,124 +865,8 @@
 									<h5>__namedParameters: <a href="../interfaces/utils.uniquestringgeneratoroptions.html" class="tsd-signature-type" data-tsd-kind="Interface">UniqueStringGeneratorOptions</a><span class="tsd-signature-symbol"> = ...</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></h4>
-							<p>Function that returns a unique random string, takes a random number generator</p>
-							<ul class="tsd-parameters">
-								<li class="tsd-parameter-signature">
-									<ul class="tsd-signatures tsd-kind-type-literal">
-										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-									</ul>
-									<ul class="tsd-descriptions">
-										<li class="tsd-description">
-											<h4 class="tsd-parameters-title">Parameters</h4>
-											<ul class="tsd-parameters">
-												<li>
-													<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
-												</li>
-											</ul>
-											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-					<a name="value" class="tsd-anchor"></a>
-					<h3>value</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-						<li class="tsd-signature tsd-kind-icon">value&lt;V&gt;<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">[]</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-						<li class="tsd-signature tsd-kind-icon">value&lt;V&gt;<span class="tsd-signature-symbol">(</span>map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-						<li class="tsd-signature tsd-kind-icon">value&lt;V&gt;<span class="tsd-signature-symbol">(</span>set<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span>, rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L3">src/utils/iterable.ts:3</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>str: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L4">src/utils/iterable.ts:4</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>V</h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>arr: <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-								<li>
-									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L5">src/utils/iterable.ts:5</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>V</h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>map: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/iterable.ts#L6">src/utils/iterable.ts:6</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>V</h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>set: <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5>rng: <a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="utils.html#stringgenerator" class="tsd-signature-type" data-tsd-kind="Type alias">StringGenerator</a></h4>
+							<p>The generator function.</p>
 						</li>
 					</ul>
 				</section>
@@ -664,26 +912,32 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="../interfaces/utils.uniquestringgeneratoroptions.html" class="tsd-kind-icon">Unique<wbr>String<wbr>Generator<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="utils.html#entry" class="tsd-kind-icon">entry</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="utils.html#numbergenerator" class="tsd-kind-icon">Number<wbr>Generator</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="utils.html#stringgenerator" class="tsd-kind-icon">String<wbr>Generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="utils.html#invisible_string_generator" class="tsd-kind-icon">invisible_<wbr>string_<wbr>generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="utils.html#key" class="tsd-kind-icon">key</a>
+						<a href="utils.html#random_entry" class="tsd-kind-icon">random_<wbr>entry</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="utils.html#random_key" class="tsd-kind-icon">random_<wbr>key</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="utils.html#random_string_generator" class="tsd-kind-icon">random_<wbr>string_<wbr>generator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="utils.html#random_value" class="tsd-kind-icon">random_<wbr>value</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="utils.html#unique_int_generator" class="tsd-kind-icon">unique_<wbr>int_<wbr>generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="utils.html#unique_string_generator" class="tsd-kind-icon">unique_<wbr>string_<wbr>generator</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="utils.html#value" class="tsd-kind-icon">value</a>
 					</li>
 				</ul>
 			</nav>

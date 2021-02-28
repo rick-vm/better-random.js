@@ -13,8 +13,6 @@ export class default_random_engine extends base_random_engine {
 	/**
 	 * Generates the next number in the PRNG sequence and updates the seed
 	 * 
-	 * @returns {number}
-	 * 
 	 * @since 1.0.0
 	 */
 	public next(): number {

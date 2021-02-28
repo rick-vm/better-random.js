@@ -39,8 +39,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -68,6 +66,18 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>An enhanced Set.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>since</dt>
+						<dd><p>1.0.0</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
@@ -99,35 +109,24 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter"><a href="utils.eset.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-external">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="utils.eset.html#_symbol_tostringtag_" class="tsd-kind-icon">[<wbr>Symbol.to<wbr>String<wbr>Tag]</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="utils.eset.html#size" class="tsd-kind-icon">size</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="utils.eset.html#_symbol_species_" class="tsd-kind-icon">[<wbr>Symbol.species]</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="utils.eset.html#array" class="tsd-kind-icon">array</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="utils.eset.html#entryarray" class="tsd-kind-icon">entry<wbr>Array</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="utils.eset.html#size" class="tsd-kind-icon">size</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="utils.eset.html#_symbol_iterator_" class="tsd-kind-icon">[<wbr>Symbol.iterator]</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="utils.eset.html#add" class="tsd-kind-icon">add</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="utils.eset.html#clear" class="tsd-kind-icon">clear</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="utils.eset.html#delete" class="tsd-kind-icon">delete</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="utils.eset.html#entries" class="tsd-kind-icon">entries</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="utils.eset.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="utils.eset.html#has" class="tsd-kind-icon">has</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="utils.eset.html#keys" class="tsd-kind-icon">keys</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="utils.eset.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="utils.eset.html#has" class="tsd-kind-icon">has</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="utils.eset.html#random" class="tsd-kind-icon">random</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="utils.eset.html#randomentry" class="tsd-kind-icon">random<wbr>Entry</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="utils.eset.html#values" class="tsd-kind-icon">values</a></li>
 							</ul>
 						</section>
 					</div>
@@ -145,7 +144,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/ESet.ts#L3">src/utils/ESet.ts:3</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/ESet.ts#L8">utils/ESet.ts:8</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -158,44 +157,14 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> values: <span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An array of values to preload the ESet with</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="utils.eset.html" class="tsd-signature-type" data-tsd-kind="Class">ESet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-external">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
-					<a name="_symbol_tostringtag_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> [<wbr>Symbol.to<wbr>String<wbr>Tag]</h3>
-					<div class="tsd-signature tsd-kind-icon">[<wbr>Symbol.to<wbr>String<wbr>Tag]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in C:/Users/Rick/AppData/Roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:143</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
-					<a name="size" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> size</h3>
-					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in C:/Users/Rick/AppData/Roaming/npm/node_modules/typescript/lib/lib.es2015.collection.d.ts:64</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
-					<a name="_symbol_species_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> <span class="tsd-flag ts-flagStatic">Static</span> [<wbr>Symbol.species]</h3>
-					<div class="tsd-signature tsd-kind-icon">[<wbr>Symbol.species]<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SetConstructor</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in C:/Users/Rick/AppData/Roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:320</li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -210,9 +179,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/ESet.ts#L27">src/utils/ESet.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/ESet.ts#L96">utils/ESet.ts:96</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates an array of the values of this ESet and caches it internally. The array will be recreated if an entry is added or removed from the ESet, or if the ESet is cleared.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
@@ -227,38 +206,53 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/ESet.ts#L32">src/utils/ESet.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/ESet.ts#L106">utils/ESet.ts:106</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates an array of the entries of this ESet and caches it internally. The array will be recreated if an entry is added or removed from the ESet, or if the ESet is cleared.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="size" class="tsd-anchor"></a>
+					<h3>size</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/ESet.ts#L22">utils/ESet.ts:22</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Identical to Set.size. The number of values in the ESet.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
-					<a name="_symbol_iterator_" class="tsd-anchor"></a>
-					<h3>[<wbr>Symbol.iterator]</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">[<wbr>Symbol.iterator]<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in C:/Users/Rick/AppData/Roaming/npm/node_modules/typescript/lib/lib.es2015.iterable.d.ts:171</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Iterates over values in the set.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
@@ -269,13 +263,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/ESet.ts#L9">src/utils/ESet.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/ESet.ts#L33">utils/ESet.ts:33</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Identical to Set.add(). Adds a value to the ESet.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>value: <span class="tsd-signature-type">V</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The value to add to the ESet</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="utils.eset.html" class="tsd-signature-type" data-tsd-kind="Class">ESet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -292,9 +299,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/ESet.ts#L15">src/utils/ESet.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/ESet.ts#L44">utils/ESet.ts:44</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Identical to Set.clear(). Removes all entries from the ESet.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -309,61 +326,66 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/ESet.ts#L21">src/utils/ESet.ts:21</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">V</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
-					<a name="entries" class="tsd-anchor"></a>
-					<h3>entries</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">entries<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in C:/Users/Rick/AppData/Roaming/npm/node_modules/typescript/lib/lib.es2015.iterable.d.ts:175</li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/ESet.ts#L59">utils/ESet.ts:59</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns an iterable of [v,v] pairs for every value <code>v</code> in the set.</p>
+									<p>Identical to Set.delete(). Removes an entry from the ESet.</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">V</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The value to remove from the ESet.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p><code>true</code> if the entry was removed, <code>false</code> if the entry does not exist.</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="foreach" class="tsd-anchor"></a>
 					<h3>for<wbr>Each</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<span class="tsd-signature-symbol">(</span>callbackfn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span>, value2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span>, set<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, thisArg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<span class="tsd-signature-symbol">(</span>callbackfn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span>, value2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span>, set<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, thisArg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="utils.eset.html" class="tsd-signature-type" data-tsd-kind="Class">ESet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in C:/Users/Rick/AppData/Roaming/npm/node_modules/typescript/lib/lib.es2015.collection.d.ts:62</li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/ESet.ts#L86">utils/ESet.ts:86</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Identical to Set.forEach(). Executes callback for each entry in the ESet.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>callbackfn: <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span>, value2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span>, set<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Function to execute for each entry of the ESet</p>
+									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-signature">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-external">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span>, value2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span>, set<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -387,55 +409,50 @@
 									</ul>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> thisArg: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> thisArg: <span class="tsd-signature-type">unknown</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value to use as <code>this</code> when executing <code>callbackfn</code></p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="utils.eset.html" class="tsd-signature-type" data-tsd-kind="Class">ESet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="has" class="tsd-anchor"></a>
 					<h3>has</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">has<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in C:/Users/Rick/AppData/Roaming/npm/node_modules/typescript/lib/lib.es2015.collection.d.ts:63</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">V</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
-					<a name="keys" class="tsd-anchor"></a>
-					<h3>keys</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">keys<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in C:/Users/Rick/AppData/Roaming/npm/node_modules/typescript/lib/lib.es2015.iterable.d.ts:179</li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/ESet.ts#L74">utils/ESet.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Despite its name, returns an iterable of the values in the set.</p>
+									<p>Identical to Set.has(). Checks if an entry exists in the ESet.</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">V</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The value to check for</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p><code>true</code> if the entry exists, <code>false</code> if the entry does not exist.</p>
 						</li>
 					</ul>
 				</section>
@@ -449,9 +466,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/ESet.ts#L37">src/utils/ESet.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/ESet.ts#L116">utils/ESet.ts:116</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves a random value from the ESet.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">V</span></h4>
 						</li>
 					</ul>
@@ -466,32 +493,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/ESet.ts#L41">src/utils/ESet.ts:41</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">]</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
-					<a name="values" class="tsd-anchor"></a>
-					<h3>values</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">values<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in C:/Users/Rick/AppData/Roaming/npm/node_modules/typescript/lib/lib.es2015.iterable.d.ts:184</li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/ESet.ts#L125">utils/ESet.ts:125</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns an iterable of values in the set.</p>
+									<p>Retrieves a random entry from the ESet.</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -530,23 +545,14 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
 								<a href="utils.eset.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
-								<a href="utils.eset.html#_symbol_tostringtag_" class="tsd-kind-icon">[<wbr>Symbol.to<wbr>String<wbr>Tag]</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
-								<a href="utils.eset.html#size" class="tsd-kind-icon">size</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
-								<a href="utils.eset.html#_symbol_species_" class="tsd-kind-icon">[<wbr>Symbol.species]</a>
-							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="utils.eset.html#array" class="tsd-kind-icon">array</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="utils.eset.html#entryarray" class="tsd-kind-icon">entry<wbr>Array</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
-								<a href="utils.eset.html#_symbol_iterator_" class="tsd-kind-icon">[<wbr>Symbol.iterator]</a>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="utils.eset.html#size" class="tsd-kind-icon">size</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="utils.eset.html#add" class="tsd-kind-icon">add</a>
@@ -557,26 +563,17 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="utils.eset.html#delete" class="tsd-kind-icon">delete</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
-								<a href="utils.eset.html#entries" class="tsd-kind-icon">entries</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="utils.eset.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="utils.eset.html#has" class="tsd-kind-icon">has</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
-								<a href="utils.eset.html#keys" class="tsd-kind-icon">keys</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="utils.eset.html#random" class="tsd-kind-icon">random</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="utils.eset.html#randomentry" class="tsd-kind-icon">random<wbr>Entry</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
-								<a href="utils.eset.html#values" class="tsd-kind-icon">values</a>
 							</li>
 						</ul>
 					</li>
@@ -594,26 +591,32 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="../interfaces/utils.uniquestringgeneratoroptions.html" class="tsd-kind-icon">Unique<wbr>String<wbr>Generator<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="../modules/utils.html#entry" class="tsd-kind-icon">entry</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/utils.html#numbergenerator" class="tsd-kind-icon">Number<wbr>Generator</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/utils.html#stringgenerator" class="tsd-kind-icon">String<wbr>Generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#invisible_string_generator" class="tsd-kind-icon">invisible_<wbr>string_<wbr>generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="../modules/utils.html#key" class="tsd-kind-icon">key</a>
+						<a href="../modules/utils.html#random_entry" class="tsd-kind-icon">random_<wbr>entry</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../modules/utils.html#random_key" class="tsd-kind-icon">random_<wbr>key</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#random_string_generator" class="tsd-kind-icon">random_<wbr>string_<wbr>generator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../modules/utils.html#random_value" class="tsd-kind-icon">random_<wbr>value</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#unique_int_generator" class="tsd-kind-icon">unique_<wbr>int_<wbr>generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#unique_string_generator" class="tsd-kind-icon">unique_<wbr>string_<wbr>generator</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="../modules/utils.html#value" class="tsd-kind-icon">value</a>
 					</li>
 				</ul>
 			</nav>

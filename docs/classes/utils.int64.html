@@ -39,8 +39,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -71,13 +69,10 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Represents a 64 bit integer by a hi and a lo 32 bit integer</p>
+						<p>Represents a 64 bit integer by a hi and a lo 32 bit integer.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>since</dt>
-						<dd><p>1.0.0</p>
-						</dd>
-					</dl>
+					<p>THIS IS A WORK IN PROGRESS.</p>
+					<p>It is nowhere near finished as I&#39;m still figuring out how to do all this.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -105,12 +100,6 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="utils.int64.html#lo" class="tsd-kind-icon">lo</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="utils.int64.html#add" class="tsd-kind-icon">add</a></li>
-							</ul>
-						</section>
 					</div>
 				</section>
 			</section>
@@ -126,7 +115,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/int64.ts#L8">src/utils/int64.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/int64.ts#L20">utils/int64.ts:20</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -157,9 +146,19 @@
 					<div class="tsd-signature tsd-kind-icon">hi<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/int64.ts#L7">src/utils/int64.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/int64.ts#L14">utils/int64.ts:14</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The high (left-most) 32 bits.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>1.0.0</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="lo" class="tsd-anchor"></a>
@@ -167,60 +166,19 @@
 					<div class="tsd-signature tsd-kind-icon">lo<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/int64.ts#L8">src/utils/int64.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/int64.ts#L20">utils/int64.ts:20</a></li>
 						</ul>
 					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="add" class="tsd-anchor"></a>
-					<h3>add</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>int<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="utils.int64.html" class="tsd-signature-type" data-tsd-kind="Class">int64</a></li>
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>int<span class="tsd-signature-symbol">: </span><a href="utils.int64.html" class="tsd-signature-type" data-tsd-kind="Class">int64</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="utils.int64.html" class="tsd-signature-type" data-tsd-kind="Class">int64</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/int64.ts#L24">src/utils/int64.ts:24</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Add an integer or int64 to this instance</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>since</dt>
-									<dd><p>1.0.0</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>int: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="utils.int64.html" class="tsd-signature-type" data-tsd-kind="Class">int64</a></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/int64.ts#L25">src/utils/int64.ts:25</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>int: <a href="utils.int64.html" class="tsd-signature-type" data-tsd-kind="Class">int64</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="utils.int64.html" class="tsd-signature-type" data-tsd-kind="Class">int64</a></h4>
-						</li>
-					</ul>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The low (right-most) 32 bits.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>1.0.0</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -269,9 +227,6 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="utils.int64.html#lo" class="tsd-kind-icon">lo</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="utils.int64.html#add" class="tsd-kind-icon">add</a>
-							</li>
 						</ul>
 					</li>
 				</ul>
@@ -282,26 +237,32 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="../interfaces/utils.uniquestringgeneratoroptions.html" class="tsd-kind-icon">Unique<wbr>String<wbr>Generator<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="../modules/utils.html#entry" class="tsd-kind-icon">entry</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/utils.html#numbergenerator" class="tsd-kind-icon">Number<wbr>Generator</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/utils.html#stringgenerator" class="tsd-kind-icon">String<wbr>Generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#invisible_string_generator" class="tsd-kind-icon">invisible_<wbr>string_<wbr>generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="../modules/utils.html#key" class="tsd-kind-icon">key</a>
+						<a href="../modules/utils.html#random_entry" class="tsd-kind-icon">random_<wbr>entry</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../modules/utils.html#random_key" class="tsd-kind-icon">random_<wbr>key</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#random_string_generator" class="tsd-kind-icon">random_<wbr>string_<wbr>generator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../modules/utils.html#random_value" class="tsd-kind-icon">random_<wbr>value</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#unique_int_generator" class="tsd-kind-icon">unique_<wbr>int_<wbr>generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#unique_string_generator" class="tsd-kind-icon">unique_<wbr>string_<wbr>generator</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="../modules/utils.html#value" class="tsd-kind-icon">value</a>
 					</li>
 				</ul>
 			</nav>
@@ -315,7 +276,6 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 		</div>
 	</div>

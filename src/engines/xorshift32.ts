@@ -17,8 +17,6 @@ export class xorshift32 extends base_random_engine {
 	/**
 	 * Generates the next number in the PRNG sequence and updates the seed
 	 * 
-	 * @returns {number}
-	 * 
 	 * @since 1.0.0
 	 */
 	next(): number {

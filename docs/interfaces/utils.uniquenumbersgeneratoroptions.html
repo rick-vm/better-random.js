@@ -39,8 +39,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -68,6 +66,18 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Options for unique number generators.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>since</dt>
+						<dd><p>1.0.0</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -98,9 +108,19 @@
 					<div class="tsd-signature tsd-kind-icon">initial<wbr>Numbers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/number.ts#L6">src/utils/number.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/number.ts#L23">utils/number.ts:23</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The numbers the generator will be preloaded with</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>1.0.0</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="uniquepercentage" class="tsd-anchor"></a>
@@ -108,9 +128,20 @@
 					<div class="tsd-signature tsd-kind-icon">unique<wbr>Percentage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/0d9575d/src/utils/number.ts#L5">src/utils/number.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a79b560/src/utils/number.ts#L17">utils/number.ts:17</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The percentage of all possible unique numbers that should be generated before resetting the cache</p>
+						</div>
+						<p>The higher this number the longer the generation times will get when most unique numbers have been generated</p>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>1.0.0</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -166,26 +197,32 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="utils.uniquestringgeneratoroptions.html" class="tsd-kind-icon">Unique<wbr>String<wbr>Generator<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="../modules/utils.html#entry" class="tsd-kind-icon">entry</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/utils.html#numbergenerator" class="tsd-kind-icon">Number<wbr>Generator</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/utils.html#stringgenerator" class="tsd-kind-icon">String<wbr>Generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#invisible_string_generator" class="tsd-kind-icon">invisible_<wbr>string_<wbr>generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="../modules/utils.html#key" class="tsd-kind-icon">key</a>
+						<a href="../modules/utils.html#random_entry" class="tsd-kind-icon">random_<wbr>entry</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../modules/utils.html#random_key" class="tsd-kind-icon">random_<wbr>key</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#random_string_generator" class="tsd-kind-icon">random_<wbr>string_<wbr>generator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../modules/utils.html#random_value" class="tsd-kind-icon">random_<wbr>value</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#unique_int_generator" class="tsd-kind-icon">unique_<wbr>int_<wbr>generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/utils.html#unique_string_generator" class="tsd-kind-icon">unique_<wbr>string_<wbr>generator</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="../modules/utils.html#value" class="tsd-kind-icon">value</a>
 					</li>
 				</ul>
 			</nav>
