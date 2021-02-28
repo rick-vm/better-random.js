@@ -15,5 +15,6 @@
 	},
 	"scripts": {
 		"test": "node test/index.js"
-	}
+	},
+	"repository": "https://github.com/TheNonStopGamer/rng-plus.js"
 }

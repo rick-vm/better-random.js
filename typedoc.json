@@ -2,11 +2,6 @@
 	"excludePrivate": true,
 	"excludeProtected": true,
 	"tsconfig": "tsconfig.json",
-	"entryPoints": [
-		"src/dists",
-		"src/engines",
-		"src/maps",
-		"src/utils"
-	],
+	"entryPoints": "src/index.ts",
 	"readme": "README.md"
 }
