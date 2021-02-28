@@ -37,8 +37,8 @@ export type NumberGenerator = (rng: base_random_engine) => number;
  * 
  * If generating a unique number fails, it retries until it finds a unique number, when the percentage of unique numbers has been exceeded, the cached numbers get reset.
  * 
- * @param min - The lower boundry generated, inclusive
- * @param max - The upper boundry generated, exclusive
+ * @param min - The lower boundry, inclusive
+ * @param max - The upper boundry, exclusive
  * @param options - Options for the generator
  * @param options.uniquePercentage - The percentage of all possible unique numbers that should be generated before resetting the cache
  * @param options.initialNumbers - The numbers the generator will be preloaded with
