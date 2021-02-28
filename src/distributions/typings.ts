@@ -13,10 +13,6 @@ export interface NormalOptions {
 }
 
 /**
- * @param rng - A random engine
- * 
- * @returns {number}
- * 
  * @since 1.0.0
  */
 export type DistributionFunction = (rng: base_random_engine) => number;

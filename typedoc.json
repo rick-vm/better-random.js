@@ -5,14 +5,18 @@
 	"tsconfig": "tsconfig.json",
 	"entryPoints": "./src/index.ts",
 	"readme": "README.md",
-	"outline": [{
-		"Engines": "engines",
-		"Distributions": "dists",
-		"Maps": "maps",
-		"Utilities": "utils"
-	}],
-	"source": [{
-		"path": "https://github.com/TheNonStopGamer/rng-plus.js/tree/master/src",
-		"line": "L"
-	}]
+	"outline": [
+		{
+			"Engines": "engines",
+			"Distributions": "dists",
+			"Maps": "maps",
+			"Utilities": "utils"
+		}
+	],
+	"source": [
+		{
+			"path": "https://github.com/TheNonStopGamer/rng-plus.js/tree/master/src",
+			"line": "L"
+		}
+	]
 }
