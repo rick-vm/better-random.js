@@ -1,6 +1,6 @@
 import { base_random_engine } from '../engines/base_random_engine.js';
 import { MapOptions, NormalOptions } from './typings.js';
-import { uniform_real_distribution } from '../distributions/uniform_real_distribution.js';
+import { uniform_real_distribution } from '../dists/uniform_real_distribution.js';
 
 const dist = uniform_real_distribution(0, 1, { inclusiveStart: false });
 

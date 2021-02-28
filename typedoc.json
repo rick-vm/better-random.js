@@ -1,22 +1,12 @@
 {
 	"excludePrivate": true,
 	"excludeProtected": true,
-	"theme": "node_modules/typedoc-neo-theme/bin/default",
 	"tsconfig": "tsconfig.json",
-	"entryPoints": "./src/index.ts",
-	"readme": "README.md",
-	"outline": [
-		{
-			"Engines": "engines",
-			"Distributions": "dists",
-			"Maps": "maps",
-			"Utilities": "utils"
-		}
+	"entryPoints": [
+		"src/dists",
+		"src/engines",
+		"src/maps",
+		"src/utils"
 	],
-	"source": [
-		{
-			"path": "https://github.com/TheNonStopGamer/rng-plus.js/tree/master/src",
-			"line": "L"
-		}
-	]
+	"readme": "README.md"
 }
