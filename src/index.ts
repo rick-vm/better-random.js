@@ -1,4 +1,4 @@
-export * as dists from './dists';
-export * as engines from './engines';
-export * as maps from './maps';
-export * as utils from './utils';
+export * as dists from './dists/index.js';
+export * as engines from './engines/index.js';
+export * as maps from './maps/index.js';
+export * as utils from './utils/index.js';

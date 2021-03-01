@@ -20,10 +20,10 @@ export class xoroshiro128plus extends base_random_engine {
 	constructor(x: number = Math.random() * Math.pow(2, 32), y: number = Math.random() * Math.pow(2, 32), z: number = Math.random() * Math.pow(2, 32), w: number = Math.random() * Math.pow(2, 32)) {
 		super(4294967295);
 
-		this._x = x >>> 0;
-		this._y = y >>> 0;
-		this._z = z >>> 0;
-		this._w = w >>> 0;
+		this._x = x;
+		this._y = y;
+		this._z = z;
+		this._w = w;
 	}
 
 	/**
@@ -55,9 +55,9 @@ export class xoroshiro128plus extends base_random_engine {
 	 * @since 1.0.0
 	 */
 	seed(x: number = Math.random() * Math.pow(2, 31), y: number = Math.random() * Math.pow(2, 31), z: number = Math.random() * Math.pow(2, 31), w: number = Math.random() * Math.pow(2, 31)): void {
-		this._x = x >>> 0;
-		this._y = y >>> 0;
-		this._z = z >>> 0;
-		this._w = w >>> 0;
+		this._x = x;
+		this._y = y;
+		this._z = z;
+		this._w = w;
 	}
 }

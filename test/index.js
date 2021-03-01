@@ -86,33 +86,30 @@ export default class OutputFile {
 
 		return returnVal;
 	}
+
+	int(...xs) {
+		for (let x of xs) {
+			x = (x >>> 0).toString(2).padStart(32, '0');
+			if (this._log) console.log(x);
+			x = new Date() + '\n' + x;
+			if (this._outputCounter > 0) x = '\n\n' + x;
+			this._writeStream = createWriteStream(this._writeStream.path);
+			this._writeStream.write(x);
+			this._outputCounter++;
+		}
+	}
 }
 
-import random from '../build/Engines';
+import { engines, dists, utils } from '../build/index.js';
 
-const of = new OutputFile('./output.txt', { log: true });
+const { int64_b, numToBoolArr } = utils;
 
-const rng = new xorshift64();
-const dist = uniform_int_distribution(1, 10, { inclusiveEnd: true });
+const o = new OutputFile('./output.txt', { log: true });
 
-let arr = [];
+o.int(-5);
+o.int(~(-5));
+o.int(5);
 
-console.time();
-for (let i = 0; i < 10000000; ++i) {
-	arr.push(dist(rng));
-}
-console.timeEnd();
+const int = new int64_b(numToBoolArr(1019328));
 
-of.analyze(arr, { occurrences: true, duplicates: false });
-
-arr = [];
-
-console.time();
-for (let i = 0; i < 10000000; ++i) {
-	arr.push(dist(rng));
-}
-console.timeEnd();
-
-of.analyze(arr, { occurrences: true, duplicates: false });
-
-console.log(0b11111111111111111111111111111111.toString(2));
+console.log(int.toString(), int.comp2().toString());
