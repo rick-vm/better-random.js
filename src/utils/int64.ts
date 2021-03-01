@@ -28,6 +28,36 @@ export function ripple_carry_adder(x1: number, x2: number, carry = 0): [number, 
 	return [y2[0], x1 & x2 | y2[1]];
 }
 
+/**
+ * Emulates a [half adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Half_adder), mostly used internal.
+ * 
+ * When used, please only work with numbers either 0, or 1.
+ * 
+ * @param x1 - The first bit
+ * @param x2 - The second bit
+ * 
+ * @since 1.0.0
+ */
+export function half_adder_b(x1: boolean, x2: boolean): [boolean, boolean] {
+	return [x1 !== x2, x1 && x2];
+}
+
+/**
+ * Emulates a [ripple-carry adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder), mostly used internal.
+ * 
+ * When used, please only work with numbers either 0, or 1.
+ * 
+ * @param x1 - The first bit
+ * @param x2 - The second bit
+ * @param carry - The ripple carry of the previous full_adder, defaults to `0`
+ * 
+ * @since 1.0.0
+ */
+export function ripple_carry_adder_b(x1: boolean, x2: boolean, carry = false): [boolean, boolean] {
+	const y2 = half_adder_b(x1 !== x2, carry);
+	return [y2[0], x1 && x2 || y2[1]];
+}
+
 type bit64<T> = [
 	T, T, T, T, T, T, T, T,
 	T, T, T, T, T, T, T, T,
@@ -105,6 +135,20 @@ export class int64_b {
 		}
 
 		if (c) y.b = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+
+		return y;
+	}
+
+	public add(x: int64_b): int64_b {
+		const y = new int64_b;
+
+		let c = false;
+		for (let i = 63; i !== -1; --i) {
+			const y1 = half_adder_b(this.b[i]!, x.b[i]!);
+			const y2 = half_adder_b(y1[0], c);
+			c = y1[1] || y2[1];
+			y.b[i] = y.b[i] || y2[0];
+		}
 
 		return y;
 	}
