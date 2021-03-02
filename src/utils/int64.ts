@@ -84,7 +84,7 @@ export class int64_b {
 		const y = new int64_b;
 
 		for (let i: i64 = 63; i !== -1; --i) {
-			this.b[i] = this.b[i] !== b[i];
+			y.b[i] = this.b[i] !== b[i];
 		}
 
 		return y;
@@ -93,7 +93,7 @@ export class int64_b {
 	public or({ b }: int64_b): int64_b {
 		const y = new int64_b;
 		for (let i: i64 = 63; i !== -1; --i) {
-			this.b[i] = this.b[i]! || b[i]!;
+			y.b[i] = this.b[i]! || b[i]!;
 		}
 
 		return y;
@@ -103,7 +103,7 @@ export class int64_b {
 		const y = new int64_b;
 
 		for (let i: i64 = 63; i !== -1; --i) {
-			this.b[i] = this.b[i]! && b[i]!;
+			y.b[i] = this.b[i]! && b[i]!;
 		}
 
 		return y;
@@ -113,7 +113,27 @@ export class int64_b {
 		const y = new int64_b;
 
 		for (let i: i64 = 63; i !== -1; --i) {
-			this.b[i] = !(this.b[i]! && b[i]!);
+			y.b[i] = !(this.b[i]! && b[i]!);
+		}
+
+		return y;
+	}
+	
+	public nor({ b }: int64_b): int64_b {
+		const y = new int64_b;
+
+		for (let i: i64 = 63; i !== -1; --i) {
+			y.b[i] = !(this.b[i]! || b[i]!);
+		}
+
+		return y;
+	}
+
+	public xnor({ b }: int64_b): int64_b {
+		const y = new int64_b;
+
+		for (let i: i64 = 63; i !== -1; --i) {
+			y.b[i] = this.b[i]! === b[i]!;
 		}
 
 		return y;
@@ -123,7 +143,7 @@ export class int64_b {
 		const y = new int64_b;
 
 		for (let i: i64 = 63; i !== -1; --i) {
-			this.b[i] = !this.b[i]!;
+			y.b[i] = !this.b[i]!;
 		}
 
 		return y;
@@ -136,7 +156,6 @@ export class int64_b {
 
 		for (let i: i64 = 63; i !== -1; --i) {
 			y.b[i] = !this.b[i]! || c;
-			console.log(c, !this.b[i]);
 			c = c && !this.b[i]!;
 		}
 
@@ -159,6 +178,22 @@ export class int64_b {
 		return y;
 	}
 
+	public subtract(x: int64_b): int64_b {
+		x = x.comp2();
+		const y = new int64_b;
+
+		let c = false;
+		for (let i: i64 = 63; i !== -1; --i) {
+			const y1 = half_adder_b(this.b[i]!, x.b[i]!);
+			const y2 = half_adder_b(y1[0], c);
+			c = y1[1] || y2[1];
+			y.b[i] = y.b[i] || y2[0];
+		}
+
+		return y;
+	}
+
+
 
 
 	public toString(): string {
@@ -169,15 +204,15 @@ export class int64_b {
 /**
  * Converts a 32 bit integer to a 64 bit boolean array
  * 
- * @param num - The 32 bit integer
+ * @param x - The 32 bit integer
  * 
  * @since 1.0.0
  */
-export function numToBoolArr(num: number): bit64<boolean> {
+export function numToBoolArr(x: number): bit64<boolean> {
 	return arr: boolean[] = [];
 
 	for (let i: i64 = 63; i !== -1; --i) {
-		arr.push((num >> i & 0b1) === 1);
+		arr.push((x >> i & 0b1) === 1);
 	}
 
 	return <bit64<boolean>>arr;
