@@ -102,12 +102,14 @@ export default class OutputFile {
 
 import { engines, dists, utils } from '../build/index.js'
 
-const { int64_b, numToBoolArr64 } = utils;
+const { int64_b, num2ToBoolArr64 } = utils;
 
 const o = new OutputFile('./output.txt', { log: true });
 
-const int = new int64_b(numToBoolArr64(1024));
+const int = new int64_b(num2ToBoolArr64(1024));
 
 console.log(int.toString());
 console.log(int.shift_right(5).toString());
-console.log(int.subtract(new int64_b(numToBoolArr64(512))).toBigInt());
+console.log(int.subtract(new int64_b(num2ToBoolArr64(1, 0))).toBigInt());
+0000000000000000000001000000000000000000000000000000000000000000
+0000000000000000000000000010000000000000000000000000000000000000
