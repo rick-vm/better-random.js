@@ -58,8 +58,9 @@ export function half_adder_b(x1: boolean, x2: boolean): [boolean, boolean] {
  * @since 1.0.0
  */
 export function ripple_carry_adder_b(x1: boolean, x2: boolean, carry = false): [boolean, boolean] {
-	const y2 = half_adder_b(x1 !== x2, carry);
-	return [y2[0], x1 && x2 || y2[1]];
+	const y1 = half_adder_b(x1, x2);
+	const y2 = half_adder_b(y1[0], carry);
+	return [y2[0], y1[1] || y2[1]];
 }
 
 type bit64<T> = [
@@ -72,18 +73,20 @@ type bit64<T> = [
 	T, T, T, T, T, T, T, T,
 	T, T, T, T, T, T, T, T
 ];
+type bit64_b = bit64<boolean>;
 
-type i64 = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63;
+type num32 = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31;
+type num64 = num32 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63;
 
 export class int64_b {
 	constructor(
-		public b: bit64<boolean> = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+		public b: bit64_b = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
 	) { }
 
 	public xor({ b }: int64_b): int64_b {
 		const y = new int64_b;
 
-		for (let i: i64 = 63; i !== -1; --i) {
+		for (let i = 63; i !== -1; --i) {
 			y.b[i] = this.b[i] !== b[i];
 		}
 
@@ -92,7 +95,7 @@ export class int64_b {
 
 	public or({ b }: int64_b): int64_b {
 		const y = new int64_b;
-		for (let i: i64 = 63; i !== -1; --i) {
+		for (let i = 63; i !== -1; --i) {
 			y.b[i] = this.b[i]! || b[i]!;
 		}
 
@@ -102,7 +105,7 @@ export class int64_b {
 	public and({ b }: int64_b): int64_b {
 		const y = new int64_b;
 
-		for (let i: i64 = 63; i !== -1; --i) {
+		for (let i = 63; i !== -1; --i) {
 			y.b[i] = this.b[i]! && b[i]!;
 		}
 
@@ -112,17 +115,17 @@ export class int64_b {
 	public nand({ b }: int64_b): int64_b {
 		const y = new int64_b;
 
-		for (let i: i64 = 63; i !== -1; --i) {
+		for (let i = 63; i !== -1; --i) {
 			y.b[i] = !(this.b[i]! && b[i]!);
 		}
 
 		return y;
 	}
-	
+
 	public nor({ b }: int64_b): int64_b {
 		const y = new int64_b;
 
-		for (let i: i64 = 63; i !== -1; --i) {
+		for (let i = 63; i !== -1; --i) {
 			y.b[i] = !(this.b[i]! || b[i]!);
 		}
 
@@ -132,7 +135,7 @@ export class int64_b {
 	public xnor({ b }: int64_b): int64_b {
 		const y = new int64_b;
 
-		for (let i: i64 = 63; i !== -1; --i) {
+		for (let i = 63; i !== -1; --i) {
 			y.b[i] = this.b[i]! === b[i]!;
 		}
 
@@ -142,7 +145,7 @@ export class int64_b {
 	public not(): int64_b {
 		const y = new int64_b;
 
-		for (let i: i64 = 63; i !== -1; --i) {
+		for (let i = 63; i !== -1; --i) {
 			y.b[i] = !this.b[i]!;
 		}
 
@@ -154,8 +157,8 @@ export class int64_b {
 
 		let c = true;
 
-		for (let i: i64 = 63; i !== -1; --i) {
-			y.b[i] = !this.b[i]! || c;
+		for (let i = 63; i !== -1; --i) {
+			y.b[i] = !this.b[i]! !== c;
 			c = c && !this.b[i]!;
 		}
 
@@ -164,11 +167,41 @@ export class int64_b {
 		return y;
 	}
 
+	public shift_left(x: num64): int64_b {
+		const y = new int64_b;
+
+		for (let i = 63; i !== -1; --i) {
+			y.b[i] = this.b[i + x] ?? this.b[0];
+		}
+
+		return y;
+	}
+
+	public shift_right(x: num64): int64_b {
+		const y = new int64_b;
+
+		for (let i = 63; i !== -1; --i) {
+			y.b[i] = this.b[i - x] ?? this.b[0];
+		}
+
+		return y;
+	}
+
+	public u_shift_right(x: num64): int64_b {
+		const y = new int64_b;
+
+		for (let i = 63; i !== -1; --i) {
+			y.b[i] = this.b[i - x] ?? false;
+		}
+
+		return y;
+	}
+
 	public add(x: int64_b): int64_b {
 		const y = new int64_b;
 
 		let c = false;
-		for (let i: i64 = 63; i !== -1; --i) {
+		for (let i = 63; i !== -1; --i) {
 			const y1 = half_adder_b(this.b[i]!, x.b[i]!);
 			const y2 = half_adder_b(y1[0], c);
 			c = y1[1] || y2[1];
@@ -183,7 +216,7 @@ export class int64_b {
 		const y = new int64_b;
 
 		let c = false;
-		for (let i: i64 = 63; i !== -1; --i) {
+		for (let i = 63; i !== -1; --i) {
 			const y1 = half_adder_b(this.b[i]!, x.b[i]!);
 			const y2 = half_adder_b(y1[0], c);
 			c = y1[1] || y2[1];
@@ -193,7 +226,9 @@ export class int64_b {
 		return y;
 	}
 
-
+	public toBigInt(): bigint {
+		return BigInt('0b' + this.toString());
+	}
 
 
 	public toString(): string {
@@ -208,12 +243,29 @@ export class int64_b {
  * 
  * @since 1.0.0
  */
-export function numToBoolArr(x: number): bit64<boolean> {
-	return arr: boolean[] = [];
+export function numToBoolArr64(x: number): bit64_b {
+	const arr: boolean[] = new Array<boolean>(32).fill((x & 0b10000000000000000000000000000000) !== 0);
 
-	for (let i: i64 = 63; i !== -1; --i) {
+	for (let i = 31; i !== -1; --i) {
 		arr.push((x >> i & 0b1) === 1);
 	}
 
-	return <bit64<boolean>>arr;
+	return <bit64_b>arr;
+}
+
+/**
+ * Converts a 32 bit integer to a 32 bit boolean array
+ * 
+ * @param x - The 32 bit integer
+ * 
+ * @since 1.0.0
+ */
+export function numToBoolArr32(x: number): bit64_b {
+	const arr: boolean[] = [];
+
+	for (let i = 31; i !== -1; --i) {
+		arr.push((x >> i & 0b1) === 1);
+	}
+
+	return <bit64_b>arr;
 }
