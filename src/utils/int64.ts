@@ -269,3 +269,24 @@ export function numToBoolArr32(x: number): bit64_b {
 
 	return <bit64_b>arr;
 }
+
+/**
+ * Converts two 32 bit integers to a 64 bit boolean array
+ * 
+ * @param x1 - The hi (left-most) 32 bit integer
+ * @param x2 - The lo (right-most) 32 bit integer
+ * 
+ * @since 1.0.0
+ */
+export function num2ToBoolArr64(x1: number, x2: number): bit64_b {
+	const arr: boolean[] = [];
+
+	for (let i = 31; i !== -1; --i) {
+		arr.push((x1 >> i & 0b1) === 1);
+	}
+	for (let i = 31; i !== -1; --i) {
+		arr.push((x2 >> i & 0b1) === 1);
+	}
+
+	return <bit64_b>arr;
+}
