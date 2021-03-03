@@ -102,20 +102,42 @@ export default class OutputFile {
 
 import { engines, dists, utils } from '../build/index.js'
 
-const { int64, int64_b, num2ToBitArr64, num2ToBoolArr64 } = utils;
+const { int64, int64_b, num2ToBitArr64, num2ToBoolArr64, ripple_carry_adder, carry_save_adder } = utils;
 
 const o = new OutputFile('./output.txt', { log: true });
 
 const rng = new engines.xoroshiro128plus();
 
 console.time();
-for (let i = 0; i < 10000; ++i) {
-	const int1 = new int64_b(num2ToBoolArr64(rng.next(), rng.next()));
-	const int2 = new int64_b(num2ToBoolArr64(rng.next(), rng.next()));
+for (let i = 0; i < 100000; ++i) {
+	const int1 = new int64(num2ToBitArr64(rng.next(), rng.next()));
+	const int2 = new int64(num2ToBitArr64(rng.next(), rng.next()));
+	const int3 = new int64(num2ToBitArr64(0b11001100110011001100110011001100, 0b11001100110011001100110011001100))
 
 	int1.toString();
 	int2.toString();
 	int1.add(int2);
 	int1.subtract(int2);
+	int1.mux(int2, int3);
 }
 console.timeEnd();
+
+const int1 = new int64(num2ToBitArr64(0, 12));
+const int2 = new int64(num2ToBitArr64(0, 5));
+//const int3 = new int64(num2ToBoolArr64(0b11001100110011001100110011001100, 0b11001100110011001100110011001100))
+
+// console.log(int1.toBigInt());
+// console.log(int2.toBigInt());
+// console.log(int1.add(int2).toBigInt());
+// console.log(int1.subtract(int2).toBigInt());
+// console.log(int1.mux(int2, int3).toBigInt());
+// console.log(int1.mux(int2, int3).demux(int3)[0].toBigInt());
+// console.log(int1.mux(int2, int3).demux(int3)[1].toBigInt());
+
+
+
+console.log(int1.toBigInt());
+console.log(int2.toBigInt());
+console.log(int1.add(int2).toBigInt());
+
+console.log((carry_save_adder(int1, int2, int1).toBigInt()));

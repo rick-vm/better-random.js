@@ -1,8 +1,6 @@
 /**
  * Emulates a [half adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Half_adder), mostly used internal.
  * 
- * When used, please only work with numbers either 0, or 1.
- * 
  * @param x1 - The first bit
  * @param x2 - The second bit
  * 
@@ -13,17 +11,15 @@ export function half_adder(x1: number, x2: number): [number, number] {
 }
 
 /**
- * Emulates a [ripple-carry adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder), mostly used internal.
- * 
- * When used, please only work with numbers either 0, or 1.
+ * Emulates a [full adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Full_adder), mostly used internal.
  * 
  * @param x1 - The first bit
  * @param x2 - The second bit
- * @param carry - The ripple carry of the previous full_adder, defaults to `0`
+ * @param carry - The carry, defaults to `0`
  * 
  * @since 1.0.0
  */
-export function ripple_carry_adder(x1: number, x2: number, carry = 0): [number, number] {
+export function full_adder(x1: number, x2: number, carry = 0): [number, number] {
 	const y2 = half_adder(x1 ^ x2, carry);
 	return [y2[0], x1 & x2 | y2[1]];
 }
@@ -32,8 +28,6 @@ export function ripple_carry_adder(x1: number, x2: number, carry = 0): [number, 
  * Simulates a [half adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Half_adder), mostly used internal.
  * 
  * Boolean version.
- * 
- * When used, please only work with numbers either 0, or 1.
  * 
  * @param x1 - The first bit
  * @param x2 - The second bit
@@ -45,19 +39,17 @@ export function half_adder_b(x1: boolean, x2: boolean): [boolean, boolean] {
 }
 
 /**
- * Simulates a [ripple-carry adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder), mostly used internal.
+ * Simulates a [full adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Full_adder), mostly used internal.
  * 
  * Boolean version.
  * 
- * When used, please only work with numbers either 0, or 1.
- * 
  * @param x1 - The first bit
  * @param x2 - The second bit
- * @param carry - The ripple carry of the previous full_adder, defaults to `false`
+ * @param carry - The carry, defaults to `false`
  * 
  * @since 1.0.0
  */
-export function ripple_carry_adder_b(x1: boolean, x2: boolean, carry = false): [boolean, boolean] {
+export function full_adder_b(x1: boolean, x2: boolean, carry = false): [boolean, boolean] {
 	const y1 = half_adder_b(x1, x2);
 	const y2 = half_adder_b(y1[0], carry);
 	return [y2[0], y1[1] || y2[1]];
@@ -821,4 +813,30 @@ export function num2ToBitArr64(x1: number, x2: number): bit64_n {
 	}
 
 	return <bit64_n>arr;
+}
+
+export function ripple_carry_adder(a: int64, b: int64): int64 {
+	const y = new int64;
+
+	let c = 0;
+
+	for (let i = 63; i !== -1; --i) {
+		const res = full_adder(b.b[i]!, a.b[i]!, c);
+		y.b[i] = res[0];
+		c = res[1];
+	}
+
+	return y;
+}
+
+export function carry_save_adder(x1: int64, x2: int64, x3: int64): int64 {
+	const s = new int64;
+	const c = new int64;
+
+	for (let i = 63; i !== -1; --i) {
+		const res = full_adder(x3.b[i]!, x2.b[i]!, x1.b[i]!);
+		s.b[i] = res[0];
+		c.b[i] = res[1];
+	}
+	return ripple_carry_adder(c.shift_left(1), s);
 }
