@@ -36,14 +36,6 @@ export function random_value<V>(map: Map<unknown, V>, rng: base_random_engine): 
  * @since 1.0.0
  */
 export function random_value<V>(set: Set<V>, rng: base_random_engine): V | undefined;
-/**
- * Retrieves a random value from any iterable.
- * 
- * @param iterable - The iterable to retrieve a random value from
- * @param rng - A random engine 
- * 
- * @since 1.0.0
- */
 export function random_value<V>(iterable: Array<V> | Map<unknown, V> | Set<V> | string, rng: base_random_engine): string | V | undefined {
 	if (iterable instanceof Array || typeof iterable === 'string') {
 		return iterable[Math.floor(rng.next() / rng.RANGE * iterable.length)];
@@ -88,14 +80,6 @@ export function random_key<K>(map: Map<K, unknown>, rng: base_random_engine): K 
  * @since 1.0.0
  */
 export function random_key<K>(set: Set<K>, rng: base_random_engine): K | undefined;
-/**
- * Retrieves a random key from any iterable.
- * 
- * @param iterable - The iterable to retrieve a random key from
- * @param rng - A random engine 
- * 
- * @since 1.0.0
- */
 export function random_key<K>(iterable: Array<unknown> | Map<K, unknown> | Set<K> | string, rng: base_random_engine): number | K | undefined {
 	if (iterable instanceof Array || typeof iterable === 'string') {
 		return Math.floor(rng.next() / rng.RANGE * iterable.length);
@@ -140,14 +124,6 @@ export function random_entry<K, V>(map: Map<K, V>, rng: base_random_engine): [K,
  * @since 1.0.0
  */
 export function random_entry<V>(set: Set<V>, rng: base_random_engine): [V, V] | undefined;
-/**
- * Retrieves a random entry from any iterable.
- * 
- * @param iterable - The iterable to retrieve a random entry from
- * @param rng - A random engine 
- * 
- * @since 1.0.0
- */
 export function random_entry<T, V>(iterable: Array<T> | Map<T, V> | Set<T> | string, rng: base_random_engine): [number, string | undefined] | [number, T | undefined] | [T, V] | [T, T] | undefined {
 	if (iterable instanceof Array) {
 		const i = Math.floor(rng.next() / rng.RANGE * iterable.length);

@@ -29,7 +29,7 @@ export function ripple_carry_adder(x1: number, x2: number, carry = 0): [number, 
 }
 
 /**
- * Emulates a [half adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Half_adder), mostly used internal.
+ * Simulates a [half adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Half_adder), mostly used internal.
  * 
  * Boolean version.
  * 
@@ -45,7 +45,7 @@ export function half_adder_b(x1: boolean, x2: boolean): [boolean, boolean] {
 }
 
 /**
- * Emulates a [ripple-carry adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder), mostly used internal.
+ * Simulates a [ripple-carry adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder), mostly used internal.
  * 
  * Boolean version.
  * 
@@ -79,74 +79,132 @@ type bit64_n = bit64<number>
 type num32 = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31;
 type num64 = num32 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63;
 
+/**
+ * Represents a 64 bit integer with a bit array of boolean's. Does this by simulating certain parts of the ALU like [half adders](https://en.wikipedia.org/wiki/Adder_(electronics)#Half_adder) and [full adders](https://en.wikipedia.org/wiki/Adder_(electronics)#Full_adder) and implements all logic operations.
+ * 
+ * @since 1.0.0
+ */
 export class int64_b {
 	public b: bit64_b
 
+	/**
+	 * @param bits - The boolean bit array that represents this int64. To transform two 32 bit integers to a bit array use `num2ToBoolArr64`.
+	 */
 	constructor(
-		b: bit64_b = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+		bits: bit64_b = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
 	) {
-		this.b = b;
+		this.b = bits;
 	}
 
-	public xor({ b }: int64_b): int64_b {
+	/**
+	 * xor's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to xor with
+	 * 
+	 * @since 1.0.0
+	 */
+	public xor(x: int64_b): int64_b {
 		const y = new int64_b;
 
 		for (let i = 63; i !== -1; --i) {
-			y.b[i] = this.b[i] !== b[i];
+			y.b[i] = this.b[i] !== x.b[i];
 		}
 
 		return y;
 	}
 
-	public or({ b }: int64_b): int64_b {
+	/**
+	 * or's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to or with
+	 * 
+	 * @since 1.0.0
+	 */
+	public or(x: int64_b): int64_b {
 		const y = new int64_b;
 		for (let i = 63; i !== -1; --i) {
-			y.b[i] = this.b[i]! || b[i]!;
+			y.b[i] = this.b[i]! || x.b[i]!;
 		}
 
 		return y;
 	}
 
-	public and({ b }: int64_b): int64_b {
+	/**
+	 * and's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to and with
+	 * 
+	 * @since 1.0.0
+	 */
+	public and(x: int64_b): int64_b {
 		const y = new int64_b;
 
 		for (let i = 63; i !== -1; --i) {
-			y.b[i] = this.b[i]! && b[i]!;
+			y.b[i] = this.b[i]! && x.b[i]!;
 		}
 
 		return y;
 	}
 
-	public nand({ b }: int64_b): int64_b {
+	/**
+	 * nand's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to nand with
+	 * 
+	 * @since 1.0.0
+	 */
+	public nand(x: int64_b): int64_b {
 		const y = new int64_b;
 
 		for (let i = 63; i !== -1; --i) {
-			y.b[i] = !(this.b[i]! && b[i]!);
+			y.b[i] = !(this.b[i]! && x.b[i]!);
 		}
 
 		return y;
 	}
 
-	public nor({ b }: int64_b): int64_b {
+	/**
+	 * nor's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to nor with
+	 * 
+	 * @since 1.0.0
+	 */
+	public nor(x: int64_b): int64_b {
 		const y = new int64_b;
 
 		for (let i = 63; i !== -1; --i) {
-			y.b[i] = !(this.b[i]! || b[i]!);
+			y.b[i] = !(this.b[i]! || x.b[i]!);
 		}
 
 		return y;
 	}
 
-	public xnor({ b }: int64_b): int64_b {
+	/**
+	 * xnor's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to xnor with
+	 * 
+	 * @since 1.0.0
+	 */
+	public xnor(x: int64_b): int64_b {
 		const y = new int64_b;
 
 		for (let i = 63; i !== -1; --i) {
-			y.b[i] = this.b[i]! === b[i]!;
+			y.b[i] = this.b[i]! === x.b[i]!;
 		}
 
 		return y;
 	}
 
+	/**
+	 * mux's this and `x` with `sel` and returns the result.
+	 * 
+	 * @param x - The other int64 to mux
+	 * @param sel - The selector
+	 * 
+	 * @since 1.0.0
+	 */
 	public mux(x: int64_b, sel: int64_b): int64_b {
 		const y = new int64_b;
 
@@ -157,6 +215,13 @@ export class int64_b {
 		return y;
 	}
 
+	/**
+	 * demux's this with `sel` and returns the results.
+	 * 
+	 * @param sel - The selector
+	 * 
+	 * @since 1.0.0
+	 */
 	public demux(sel: int64_b): [int64_b, int64_b] {
 		const y1 = new int64_b;
 		const y2 = new int64_b;
@@ -169,6 +234,11 @@ export class int64_b {
 		return [y1, y2];
 	}
 
+	/**
+	 * not's this and returns the result.
+	 * 
+	 * @since 1.0.0
+	 */
 	public not(): int64_b {
 		const y = new int64_b;
 
@@ -179,6 +249,11 @@ export class int64_b {
 		return y;
 	}
 
+	/**
+	 * Gets the 2's complement of this and returns the result.
+	 * 
+	 * @since 1.0.0
+	 */
 	public comp2(): int64_b {
 		const y = new int64_b;
 
@@ -194,6 +269,13 @@ export class int64_b {
 		return y;
 	}
 
+	/**
+	 * Shifts this to the left and returns the result.
+	 * 
+	 * @param x - The amount to shift
+	 * 
+	 * @since 1.0.0
+	 */
 	public shift_left(x: num64): int64_b {
 		const y = new int64_b;
 
@@ -204,6 +286,13 @@ export class int64_b {
 		return y;
 	}
 
+	/**
+	 * Shifts this to the right and returns the result.
+	 * 
+	 * @param x - The amount to shift
+	 * 
+	 * @since 1.0.0
+	 */
 	public shift_right(x: num64): int64_b {
 		const y = new int64_b;
 
@@ -214,6 +303,13 @@ export class int64_b {
 		return y;
 	}
 
+	/**
+	 * Unsigned Shifts this to the right and returns the result.
+	 * 
+	 * @param x - The amount to shift
+	 * 
+	 * @since 1.0.0
+	 */
 	public u_shift_right(x: num64): int64_b {
 		const y = new int64_b;
 
@@ -224,6 +320,13 @@ export class int64_b {
 		return y;
 	}
 
+	/**
+	 * Adds an int64 to this and returns the result.
+	 * 
+	 * @param x - The number to add
+	 * 
+	 * @since 1.0.0
+	 */
 	public add(x: int64_b): int64_b {
 		const y = new int64_b;
 
@@ -239,6 +342,13 @@ export class int64_b {
 		return y;
 	}
 
+	/**
+	 * Subtract an int64 from this and returns the result.
+	 * 
+	 * @param x - The number to subtract
+	 * 
+	 * @since 1.0.0
+	 */
 	public subtract(x: int64_b): int64_b {
 		x = x.comp2();
 		const y = new int64_b;
@@ -258,14 +368,29 @@ export class int64_b {
 
 
 
+	/**
+	 * Converts this to a 32 bit integer (cuts off 32 left-most bits)
+	 * 
+	 * @since 1.0.0
+	 */
 	public toNumber(): number {
 		return Number('0b' + this.toString().slice(32, 64));
 	}
 
+	/**
+	 * Converts this to a 64 bit BigInt
+	 * 
+	 * @since 1.0.0
+	 */
 	public toBigInt(): bigint {
 		return BigInt('0b' + this.toString());
 	}
 
+	/**
+	 * Converts this to a 64 bit string (binary)
+	 * 
+	 * @since 1.0.0
+	 */
 	public toString(): string {
 		return this.b.map(b => ~~b).join('');
 	}
@@ -326,15 +451,30 @@ export function num2ToBoolArr64(x1: number, x2: number): bit64_b {
 	return <bit64_b>arr;
 }
 
+/**
+ * Represents a 64 bit integer with a bit array of number's. Does this by simulating certain parts of the ALU like [half adders](https://en.wikipedia.org/wiki/Adder_(electronics)#Half_adder) and [full adders](https://en.wikipedia.org/wiki/Adder_(electronics)#Full_adder) and implements all logic operations.
+ * 
+ * @since 1.0.0
+ */
 export class int64 {
 	public b: bit64_n;
 
+	/**
+	 * @param bits - The number bit-array that represents this int64. To transform two 32 bit integers to a bit array use `num2ToBitArr64`.
+	 */
 	constructor(
 		bits: bit64_n = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	) {
 		this.b = bits;
 	}
 
+	/**
+	 * xor's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to xor with
+	 * 
+	 * @since 1.0.0
+	 */
 	public xor(x: int64): int64 {
 		const y = new int64;
 
@@ -345,6 +485,13 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * or's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to or with
+	 * 
+	 * @since 1.0.0
+	 */
 	public or(x: int64): int64 {
 		const y = new int64;
 		for (let i = 63; i !== -1; --i) {
@@ -354,6 +501,13 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * and's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to and with
+	 * 
+	 * @since 1.0.0
+	 */
 	public and(x: int64): int64 {
 		const y = new int64;
 
@@ -364,6 +518,13 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * nand's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to nand with
+	 * 
+	 * @since 1.0.0
+	 */
 	public nand(x: int64): int64 {
 		const y = new int64;
 
@@ -374,6 +535,13 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * nor's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to nor with
+	 * 
+	 * @since 1.0.0
+	 */
 	public nor(x: int64): int64 {
 		const y = new int64;
 
@@ -384,6 +552,13 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * xnor's this with `x` and returns the result.
+	 * 
+	 * @param x - The int64 to xnor with
+	 * 
+	 * @since 1.0.0
+	 */
 	public xnor(x: int64): int64 {
 		const y = new int64;
 
@@ -394,6 +569,14 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * mux's this and `x` with `sel` and returns the result.
+	 * 
+	 * @param x - The other int64 to mux
+	 * @param sel - The selector
+	 * 
+	 * @since 1.0.0
+	 */
 	public mux(x: int64, sel: int64): int64 {
 		const y = new int64;
 
@@ -404,6 +587,13 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * demux's this with `sel` and returns the results.
+	 * 
+	 * @param sel - The selector
+	 * 
+	 * @since 1.0.0
+	 */
 	public demux(sel: int64): [int64, int64] {
 		const y1 = new int64;
 		const y2 = new int64;
@@ -416,6 +606,11 @@ export class int64 {
 		return [y1, y2];
 	}
 
+	/**
+	 * not's this and returns the result.
+	 * 
+	 * @since 1.0.0
+	 */
 	public not(): int64 {
 		const y = new int64;
 
@@ -426,6 +621,11 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * Gets the 2's complement of this and returns the result.
+	 * 
+	 * @since 1.0.0
+	 */
 	public comp2(): int64 {
 		const y = new int64;
 
@@ -441,6 +641,13 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * Shifts this to the left and returns the result.
+	 * 
+	 * @param x - The amount to shift
+	 * 
+	 * @since 1.0.0
+	 */
 	public shift_left(x: num64): int64 {
 		const y = new int64;
 
@@ -451,6 +658,13 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * Shifts this to the right and returns the result.
+	 * 
+	 * @param x - The amount to shift
+	 * 
+	 * @since 1.0.0
+	 */
 	public shift_right(x: num64): int64 {
 		const y = new int64;
 
@@ -461,6 +675,13 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * Unsigned Shifts this to the right and returns the result.
+	 * 
+	 * @param x - The amount to shift
+	 * 
+	 * @since 1.0.0
+	 */
 	public u_shift_right(x: num64): int64 {
 		const y = new int64;
 
@@ -471,6 +692,13 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * Adds an int64 to this and returns the result.
+	 * 
+	 * @param x - The number to add
+	 * 
+	 * @since 1.0.0
+	 */
 	public add(x: int64): int64 {
 		const y = new int64;
 
@@ -486,6 +714,13 @@ export class int64 {
 		return y;
 	}
 
+	/**
+	 * Subtract an int64 from this and returns the result.
+	 * 
+	 * @param x - The number to subtract
+	 * 
+	 * @since 1.0.0
+	 */
 	public subtract(x: int64): int64 {
 		x = x.comp2();
 		const y = new int64;
@@ -505,15 +740,29 @@ export class int64 {
 
 
 
-
+	/**
+	 * Converts this to a 32 bit integer (cuts off 32 left-most bits)
+	 * 
+	 * @since 1.0.0
+	 */
 	public toNumber(): number {
 		return Number('0b' + this.toString().slice(32, 64));
 	}
 
+	/**
+	 * Converts this to a 64 bit BigInt
+	 * 
+	 * @since 1.0.0
+	 */
 	public toBigInt(): bigint {
 		return BigInt('0b' + this.toString());
 	}
 
+	/**
+	 * Converts this to a 64 bit string (binary)
+	 * 
+	 * @since 1.0.0
+	 */
 	public toString(): string {
 		return this.b.join('');
 	}

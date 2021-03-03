@@ -74,6 +74,7 @@
 								<li class="tsd-kind-class tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../classes/utils.eset.html" class="tsd-kind-icon">ESet</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../classes/utils.vector.html" class="tsd-kind-icon">Vector</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-namespace"><a href="../classes/utils.int64.html" class="tsd-kind-icon">int64</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-namespace"><a href="../classes/utils.int64_b.html" class="tsd-kind-icon">int64_<wbr>b</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -93,11 +94,21 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#half_adder" class="tsd-kind-icon">half_<wbr>adder</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#half_adder_b" class="tsd-kind-icon">half_<wbr>adder_<wbr>b</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#invisible_string_generator" class="tsd-kind-icon">invisible_<wbr>string_<wbr>generator</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#num2tobitarr64" class="tsd-kind-icon">num2<wbr>ToBit<wbr>Arr64</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#num2toboolarr64" class="tsd-kind-icon">num2<wbr>ToBool<wbr>Arr64</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#numtobitarr32" class="tsd-kind-icon">num<wbr>ToBit<wbr>Arr32</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#numtobitarr64" class="tsd-kind-icon">num<wbr>ToBit<wbr>Arr64</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#numtoboolarr32" class="tsd-kind-icon">num<wbr>ToBool<wbr>Arr32</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#numtoboolarr64" class="tsd-kind-icon">num<wbr>ToBool<wbr>Arr64</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter"><a href="utils.html#random_entry" class="tsd-kind-icon">random_<wbr>entry</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter"><a href="utils.html#random_key" class="tsd-kind-icon">random_<wbr>key</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#random_string_generator" class="tsd-kind-icon">random_<wbr>string_<wbr>generator</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter"><a href="utils.html#random_value" class="tsd-kind-icon">random_<wbr>value</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#ripple_carry_adder" class="tsd-kind-icon">ripple_<wbr>carry_<wbr>adder</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#ripple_carry_adder_b" class="tsd-kind-icon">ripple_<wbr>carry_<wbr>adder_<wbr>b</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#unique_int_generator" class="tsd-kind-icon">unique_<wbr>int_<wbr>generator</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="utils.html#unique_string_generator" class="tsd-kind-icon">unique_<wbr>string_<wbr>generator</a></li>
 							</ul>
@@ -113,7 +124,7 @@
 					<div class="tsd-signature tsd-kind-icon">Number<wbr>Generator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/number.ts#L33">utils/number.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/number.ts#L33">utils/number.ts:33</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -157,7 +168,7 @@
 					<div class="tsd-signature tsd-kind-icon">String<wbr>Generator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>rng<span class="tsd-signature-symbol">: </span><a href="../classes/engines.base_random_engine.html" class="tsd-signature-type" data-tsd-kind="Class">base_random_engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/string.ts#L11">utils/string.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/string.ts#L11">utils/string.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -199,6 +210,93 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="half_adder" class="tsd-anchor"></a>
+					<h3>half_<wbr>adder</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">half_<wbr>adder<span class="tsd-signature-symbol">(</span>x1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, x2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/int64.ts#L11">utils/int64.ts:11</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Emulates a <a href="https://en.wikipedia.org/wiki/Adder_(electronics)#Half_adder">half adder</a>, mostly used internal.</p>
+								</div>
+								<p>When used, please only work with numbers either 0, or 1.</p>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x1: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The first bit</p>
+									</div>
+								</li>
+								<li>
+									<h5>x2: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The second bit</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="half_adder_b" class="tsd-anchor"></a>
+					<h3>half_<wbr>adder_<wbr>b</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">half_<wbr>adder_<wbr>b<span class="tsd-signature-symbol">(</span>x1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, x2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/int64.ts#L43">utils/int64.ts:43</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Simulates a <a href="https://en.wikipedia.org/wiki/Adder_(electronics)#Half_adder">half adder</a>, mostly used internal.</p>
+								</div>
+								<p>Boolean version.</p>
+								<p>When used, please only work with numbers either 0, or 1.</p>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x1: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The first bit</p>
+									</div>
+								</li>
+								<li>
+									<h5>x2: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The second bit</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
 					<a name="invisible_string_generator" class="tsd-anchor"></a>
 					<h3>invisible_<wbr>string_<wbr>generator</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
@@ -208,7 +306,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/string.ts#L62">utils/string.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/string.ts#L62">utils/string.ts:62</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -235,6 +333,234 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="num2tobitarr64" class="tsd-anchor"></a>
+					<h3>num2<wbr>ToBit<wbr>Arr64</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">num2<wbr>ToBit<wbr>Arr64<span class="tsd-signature-symbol">(</span>x1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, x2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bit64_n</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/int64.ts#L813">utils/int64.ts:813</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts two 32 bit integers to a 64 bit boolean array</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x1: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The hi (left-most) 32 bit integer</p>
+									</div>
+								</li>
+								<li>
+									<h5>x2: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The lo (right-most) 32 bit integer</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">bit64_n</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="num2toboolarr64" class="tsd-anchor"></a>
+					<h3>num2<wbr>ToBool<wbr>Arr64</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">num2<wbr>ToBool<wbr>Arr64<span class="tsd-signature-symbol">(</span>x1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, x2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bit64_b</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/int64.ts#L441">utils/int64.ts:441</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts two 32 bit integers to a 64 bit boolean array</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x1: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The hi (left-most) 32 bit integer</p>
+									</div>
+								</li>
+								<li>
+									<h5>x2: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The lo (right-most) 32 bit integer</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">bit64_b</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="numtobitarr32" class="tsd-anchor"></a>
+					<h3>num<wbr>ToBit<wbr>Arr32</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">num<wbr>ToBit<wbr>Arr32<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bit64_n</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/int64.ts#L795">utils/int64.ts:795</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts a 32 bit integer to a 32 bit boolean array</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The 32 bit integer</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">bit64_n</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="numtobitarr64" class="tsd-anchor"></a>
+					<h3>num<wbr>ToBit<wbr>Arr64</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">num<wbr>ToBit<wbr>Arr64<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bit64_n</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/int64.ts#L778">utils/int64.ts:778</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts a 32 bit integer to a 64 bit boolean array</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The 32 bit integer</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">bit64_n</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="numtoboolarr32" class="tsd-anchor"></a>
+					<h3>num<wbr>ToBool<wbr>Arr32</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">num<wbr>ToBool<wbr>Arr32<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bit64_b</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/int64.ts#L423">utils/int64.ts:423</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts a 32 bit integer to a 32 bit boolean array</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The 32 bit integer</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">bit64_b</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="numtoboolarr64" class="tsd-anchor"></a>
+					<h3>num<wbr>ToBool<wbr>Arr64</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">num<wbr>ToBool<wbr>Arr64<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bit64_b</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/int64.ts#L406">utils/int64.ts:406</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts a 32 bit integer to a 64 bit boolean array</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The 32 bit integer</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">bit64_b</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
 					<a name="random_entry" class="tsd-anchor"></a>
 					<h3>random_<wbr>entry</h3>
@@ -248,7 +574,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L115">utils/iterable.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L99">utils/iterable.ts:99</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -281,7 +607,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L124">utils/iterable.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L108">utils/iterable.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -320,7 +646,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L133">utils/iterable.ts:133</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L117">utils/iterable.ts:117</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -362,7 +688,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L142">utils/iterable.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L126">utils/iterable.ts:126</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -413,7 +739,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L63">utils/iterable.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L55">utils/iterable.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -446,7 +772,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L72">utils/iterable.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L64">utils/iterable.ts:64</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -479,7 +805,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L81">utils/iterable.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L73">utils/iterable.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -518,7 +844,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L90">utils/iterable.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L82">utils/iterable.ts:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -566,7 +892,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/string.ts#L43">utils/string.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/string.ts#L43">utils/string.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -607,7 +933,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L11">utils/iterable.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L11">utils/iterable.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -640,7 +966,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L20">utils/iterable.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L20">utils/iterable.ts:20</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -679,7 +1005,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L29">utils/iterable.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L29">utils/iterable.ts:29</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -718,7 +1044,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/iterable.ts#L38">utils/iterable.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/iterable.ts#L38">utils/iterable.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -757,6 +1083,105 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="ripple_carry_adder" class="tsd-anchor"></a>
+					<h3>ripple_<wbr>carry_<wbr>adder</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">ripple_<wbr>carry_<wbr>adder<span class="tsd-signature-symbol">(</span>x1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, x2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, carry<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/int64.ts#L26">utils/int64.ts:26</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Emulates a <a href="https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder">ripple-carry adder</a>, mostly used internal.</p>
+								</div>
+								<p>When used, please only work with numbers either 0, or 1.</p>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x1: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The first bit</p>
+									</div>
+								</li>
+								<li>
+									<h5>x2: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The second bit</p>
+									</div>
+								</li>
+								<li>
+									<h5>carry: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The ripple carry of the previous full_adder, defaults to <code>0</code></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="ripple_carry_adder_b" class="tsd-anchor"></a>
+					<h3>ripple_<wbr>carry_<wbr>adder_<wbr>b</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">ripple_<wbr>carry_<wbr>adder_<wbr>b<span class="tsd-signature-symbol">(</span>x1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, x2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, carry<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/int64.ts#L60">utils/int64.ts:60</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Simulates a <a href="https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder">ripple-carry adder</a>, mostly used internal.</p>
+								</div>
+								<p>Boolean version.</p>
+								<p>When used, please only work with numbers either 0, or 1.</p>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x1: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The first bit</p>
+									</div>
+								</li>
+								<li>
+									<h5>x2: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The second bit</p>
+									</div>
+								</li>
+								<li>
+									<h5>carry: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The ripple carry of the previous full_adder, defaults to <code>false</code></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
 					<a name="unique_int_generator" class="tsd-anchor"></a>
 					<h3>unique_<wbr>int_<wbr>generator</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
@@ -766,7 +1191,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/number.ts#L50">utils/number.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/number.ts#L50">utils/number.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -785,13 +1210,13 @@
 								<li>
 									<h5>min: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The lower boundry generated, inclusive</p>
+										<p>The lower boundry, inclusive</p>
 									</div>
 								</li>
 								<li>
 									<h5>max: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The upper boundry generated, exclusive</p>
+										<p>The upper boundry, exclusive</p>
 									</div>
 								</li>
 								<li>
@@ -831,7 +1256,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/989701f/src/utils/string.ts#L86">utils/string.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/TheNonStopGamer/rng-plus.js/blob/a6c776e/src/utils/string.ts#L86">utils/string.ts:86</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -906,6 +1331,9 @@
 					<li class=" tsd-kind-class tsd-parent-kind-namespace">
 						<a href="../classes/utils.int64.html" class="tsd-kind-icon">int64</a>
 					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-namespace">
+						<a href="../classes/utils.int64_b.html" class="tsd-kind-icon">int64_<wbr>b</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="../interfaces/utils.uniquenumbersgeneratoroptions.html" class="tsd-kind-icon">Unique<wbr>Numbers<wbr>Generator<wbr>Options</a>
 					</li>
@@ -919,7 +1347,31 @@
 						<a href="utils.html#stringgenerator" class="tsd-kind-icon">String<wbr>Generator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="utils.html#half_adder" class="tsd-kind-icon">half_<wbr>adder</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="utils.html#half_adder_b" class="tsd-kind-icon">half_<wbr>adder_<wbr>b</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="utils.html#invisible_string_generator" class="tsd-kind-icon">invisible_<wbr>string_<wbr>generator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="utils.html#num2tobitarr64" class="tsd-kind-icon">num2<wbr>ToBit<wbr>Arr64</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="utils.html#num2toboolarr64" class="tsd-kind-icon">num2<wbr>ToBool<wbr>Arr64</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="utils.html#numtobitarr32" class="tsd-kind-icon">num<wbr>ToBit<wbr>Arr32</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="utils.html#numtobitarr64" class="tsd-kind-icon">num<wbr>ToBit<wbr>Arr64</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="utils.html#numtoboolarr32" class="tsd-kind-icon">num<wbr>ToBool<wbr>Arr32</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="utils.html#numtoboolarr64" class="tsd-kind-icon">num<wbr>ToBool<wbr>Arr64</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="utils.html#random_entry" class="tsd-kind-icon">random_<wbr>entry</a>
@@ -932,6 +1384,12 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="utils.html#random_value" class="tsd-kind-icon">random_<wbr>value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="utils.html#ripple_carry_adder" class="tsd-kind-icon">ripple_<wbr>carry_<wbr>adder</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="utils.html#ripple_carry_adder_b" class="tsd-kind-icon">ripple_<wbr>carry_<wbr>adder_<wbr>b</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="utils.html#unique_int_generator" class="tsd-kind-icon">unique_<wbr>int_<wbr>generator</a>

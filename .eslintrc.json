@@ -21,7 +21,8 @@
 		"jsdoc/require-returns-type": "off",
 		"jsdoc/require-returns-description": "off",
 		"jsdoc/require-returns": "off",
-		"require-jsdoc": "warn",
+		"require-jsdoc": "off",
+		"jsdoc/require-jsdoc": "off",
 		"indent": [
 			"error",
 			"tab"
