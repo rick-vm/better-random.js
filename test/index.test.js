@@ -102,14 +102,20 @@ export default class OutputFile {
 
 import { engines, dists, utils } from '../build/index.js'
 
-const { int64_b, num2ToBoolArr64 } = utils;
+const { int64, int64_b, num2ToBitArr64, num2ToBoolArr64 } = utils;
 
 const o = new OutputFile('./output.txt', { log: true });
 
-const int = new int64_b(num2ToBoolArr64(1024));
+const rng = new engines.xoroshiro128plus();
 
-console.log(int.toString());
-console.log(int.shift_right(5).toString());
-console.log(int.subtract(new int64_b(num2ToBoolArr64(1, 0))).toBigInt());
-0000000000000000000001000000000000000000000000000000000000000000
-0000000000000000000000000010000000000000000000000000000000000000
+console.time();
+for (let i = 0; i < 10000; ++i) {
+	const int1 = new int64_b(num2ToBoolArr64(rng.next(), rng.next()));
+	const int2 = new int64_b(num2ToBoolArr64(rng.next(), rng.next()));
+
+	int1.toString();
+	int2.toString();
+	int1.add(int2);
+	int1.subtract(int2);
+}
+console.timeEnd();
