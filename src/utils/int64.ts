@@ -699,8 +699,8 @@ export class int64 {
 		for (let i = 63; i !== -1; --i) {
 			const y1 = half_adder(this.b[i]!, x.b[i]!);
 			const y2 = half_adder(y1[0], c);
-			c = y1[1] || y2[1];
-			y.b[i] = y.b[i] || y2[0];
+			c = y1[1] | y2[1];
+			y.b[i] = y.b[i]! | y2[0];
 		}
 
 		return y;
