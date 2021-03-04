@@ -124,7 +124,7 @@ console.timeEnd();
 
 const int1 = new int64(num2ToBitArr64(0, 12));
 const int2 = new int64(num2ToBitArr64(0, 5));
-//const int3 = new int64(num2ToBoolArr64(0b11001100110011001100110011001100, 0b11001100110011001100110011001100))
+const int3 = new int64(num2ToBitArr64(0, 3))
 
 // console.log(int1.toBigInt());
 // console.log(int2.toBigInt());

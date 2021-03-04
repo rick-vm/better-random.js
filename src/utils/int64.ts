@@ -815,13 +815,23 @@ export function num2ToBitArr64(x1: number, x2: number): bit64_n {
 	return <bit64_n>arr;
 }
 
-export function ripple_carry_adder(a: int64, b: int64): int64 {
+/**
+ * Simulates a 64 bit ripple-carry adder
+ * 
+ * @param x1 - The first int64
+ * @param x - The second int64
+ * 
+ * @internal
+ * 
+ * @since 1.0.0
+ */
+export function ripple_carry_adder(x1: int64, x: int64): int64 {
 	const y = new int64;
 
 	let c = 0;
 
 	for (let i = 63; i !== -1; --i) {
-		const res = full_adder(b.b[i]!, a.b[i]!, c);
+		const res = full_adder(x.b[i]!, x1.b[i]!, c);
 		y.b[i] = res[0];
 		c = res[1];
 	}
@@ -829,6 +839,17 @@ export function ripple_carry_adder(a: int64, b: int64): int64 {
 	return y;
 }
 
+/**
+ * Simulates a 64 bit carry-save adder
+ * 
+ * @param x1 - The first int64
+ * @param x2 - The second int64
+ * @param x3 - The third int64
+ * 
+ * @internal
+ * 
+ * @since 1.0.0
+ */
 export function carry_save_adder(x1: int64, x2: int64, x3: int64): int64 {
 	const s = new int64;
 	const c = new int64;
