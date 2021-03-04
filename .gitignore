@@ -3,3 +3,6 @@ package-lock.json
 
 # ignore compiled js
 build/
+
+# ignore test output
+test/output.txt
