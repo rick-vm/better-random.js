@@ -1,10 +1,10 @@
+docs/
 node_modules/
-package-lock.json
-.gitignore
-tsconfig.json
+src/
+test/
 .eslintignore
 .eslintrc.json
-test/
-docs/
-src/
-md_docs/
+.gitignore
+package-lock.json
+tsconfig.json
+typedoc.json
