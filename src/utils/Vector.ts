@@ -10,7 +10,7 @@ export class Vector<T> extends Array {
 	 * @param size - The initial size of the array, gets filled with empty values
 	 * @param entries - An array of [Key, Value] tuples to be added as entries to the new EMap
 	 */
-	constructor(size?: number, entries?: T[]) {
+	constructor(size = 0, entries?: T[]) {
 		super(size);
 		if (entries) for (let i = 0; i < entries.length; ++i) this[i] = entries[i];
 	}
