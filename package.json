@@ -20,5 +20,17 @@
 		"type": "git",
 		"url": "git+https://github.com/TheNonStopGamer/rng-plus.js.git"
 	},
-	"homepage": "https://thenonstopgamer.github.io/rng-plus.js/"
+	"homepage": "https://thenonstopgamer.github.io/rng-plus.js/",
+	"keywords": [
+		"random",
+		"rng",
+		"number",
+		"generator",
+		"normal",
+		"gaussian",
+		"distribution",
+		"pseudorandom",
+		"uniform",
+		"prng"
+	]
 }
