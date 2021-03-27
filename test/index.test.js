@@ -100,7 +100,7 @@ export default class OutputFile {
 	}
 }
 
-import { engines, dists, utils } from '../build/index.js'
+import { engines, dists, utils } from '../build/index.js';
 
 const { int64, int64_b, num2ToBitArr64, num2ToBoolArr64, ripple_carry_adder, carry_save_adder } = utils;
 
