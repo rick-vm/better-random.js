@@ -1,8 +1,5 @@
+/build/
 node_modules/
-package-lock.json
-
-# ignore compiled js
-build/
-
-# ignore test output
-test/output.txt
+.env
+.eslintcache
+/logs/

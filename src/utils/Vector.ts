@@ -1,4 +1,4 @@
-import { EMap } from './EMap.js';
+import { EMap } from './enhanced_map.js';
 
 /**
  * An enhanced array.
@@ -85,8 +85,8 @@ export class Vector<T> extends Array {
 				this[i] = values[i];
 			}
 			return this;
-		} else {
-			return super.fill(values, start, end);
 		}
+		
+		return super.fill(values, start, end);
 	}
 }
