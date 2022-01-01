@@ -25,10 +25,10 @@ export abstract class BaseRandomEngine {
 		return this.next() * (max - min) + min;
 	}
 
-	public uniform_int(min: number, max: number, { exclusiveStart = false, exclusiveEnd = true }: MapOptions = { exclusiveStart: false, exclusiveEnd: true }): number {
+	public uniform_int(min: number, max: number, { exclusiveStart = false, inclusiveEnd = true }: MapOptions = { exclusiveStart: false, inclusiveEnd: false }): number {
 		return Math.floor(this.uniform_real(
-			min - (exclusiveStart as unknown as number), 
-			max + (exclusiveEnd as unknown as number), 
+			min + (exclusiveStart as unknown as number), 
+			max + (inclusiveEnd as unknown as number), 
 		));
 	}
 
@@ -40,10 +40,10 @@ export abstract class BaseRandomEngine {
 		return (res + 0.5) * (max - min) + min;
 	}
 
-	public normal_int(min: number, max: number, { exclusiveStart = false, exclusiveEnd = true }: MapOptions = { exclusiveStart: false, exclusiveEnd: true }): number {
+	public normal_int(min: number, max: number, { exclusiveStart = false, inclusiveEnd = false }: MapOptions = { exclusiveStart: false, inclusiveEnd: false }): number {
 		return Math.floor(this.normal_real(
-			min - (exclusiveStart as unknown as number), 
-			max + (exclusiveEnd as unknown as number), 
+			min + (exclusiveStart as unknown as number), 
+			max + (inclusiveEnd as unknown as number), 
 		));
 	}
 
@@ -61,11 +61,11 @@ export abstract class BaseRandomEngine {
 		return vec;
 	}
 
-	public uniform_int_array(length: number, min: number, max: number, { exclusiveStart = false, exclusiveEnd = true }: MapOptions = { exclusiveStart: false, exclusiveEnd: true }): Vector<number> {
+	public uniform_int_array(length: number, min: number, max: number, { exclusiveStart = false, inclusiveEnd = false }: MapOptions = { exclusiveStart: false, inclusiveEnd: false }): Vector<number> {
 		const vec = new Vector<number>(length);
 
 		for (let i = 0; i < vec.length; i++) {
-			vec[i] = this.uniform_int(min, max, { exclusiveStart, exclusiveEnd });
+			vec[i] = this.uniform_int(min, max, { exclusiveStart, inclusiveEnd });
 		}
 
 		return vec;
@@ -81,11 +81,11 @@ export abstract class BaseRandomEngine {
 		return vec;
 	}
 
-	public normal_int_array(length: number, min: number, max: number, { exclusiveStart = false, exclusiveEnd = true }: MapOptions = { exclusiveStart: false, exclusiveEnd: true }): Vector<number> {
+	public normal_int_array(length: number, min: number, max: number, { exclusiveStart = false, inclusiveEnd = false }: MapOptions = { exclusiveStart: false, inclusiveEnd: false }): Vector<number> {
 		const vec = new Vector<number>(length);
 
 		for (let i = 0; i < vec.length; i++) {
-			vec[i] = this.normal_int(min, max, { exclusiveStart, exclusiveEnd });
+			vec[i] = this.normal_int(min, max, { exclusiveStart, inclusiveEnd });
 		}
 
 		return vec;
