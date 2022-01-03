@@ -32,18 +32,20 @@ export abstract class BaseRandomEngine {
 		));
 	}
 
-	public normal_real(min: number, max: number, standardDeviation = 1): number {
-		let res = this.normal_num(standardDeviation);
-		while (res > 0.5 || res < -0.5)
-			res = this.normal_num(standardDeviation);
+	public normal_real(min: number, max: number, mean = 0, standardDeviation = 1, skew = 0): number {
+		let res;
+		do res = this.normal_num(mean, standardDeviation, skew); while (res < 0 || res > 1);
 
-		return (res + 0.5) * (max - min) + min;
+		return res * (max - min) + min;
 	}
 
-	public normal_int(min: number, max: number, { exclusiveStart = false, inclusiveEnd = false }: MapOptions = { exclusiveStart: false, inclusiveEnd: false }): number {
+	public normal_int(min: number, max: number, mean = 0, standardDeviation = 1, skew = 0, { exclusiveStart = false, inclusiveEnd = false }: MapOptions = { exclusiveStart: false, inclusiveEnd: false }): number {
 		return Math.floor(this.normal_real(
 			min + (exclusiveStart as unknown as number), 
 			max + (inclusiveEnd as unknown as number), 
+			mean, 
+			standardDeviation,
+			skew,
 		));
 	}
 
@@ -71,21 +73,21 @@ export abstract class BaseRandomEngine {
 		return vec;
 	}
 
-	public normal_real_array(length: number, min: number, max: number): Vector<number> {
+	public normal_real_array(length: number, min: number, max: number, mean = 0, standardDeviation = 1, skew = 0): Vector<number> {
 		const vec = new Vector<number>(length);
 
 		for (let i = 0; i < vec.length; i++) {
-			vec[i] = this.normal_real(min, max);
+			vec[i] = this.normal_real(min, max, mean, standardDeviation, skew);
 		}
 
 		return vec;
 	}
 
-	public normal_int_array(length: number, min: number, max: number, { exclusiveStart = false, inclusiveEnd = false }: MapOptions = { exclusiveStart: false, inclusiveEnd: false }): Vector<number> {
+	public normal_int_array(length: number, min: number, max: number, mean = 0, standardDeviation = 1, skew = 0, { exclusiveStart = false, inclusiveEnd = false }: MapOptions = { exclusiveStart: false, inclusiveEnd: false }): Vector<number> {
 		const vec = new Vector<number>(length);
 
 		for (let i = 0; i < vec.length; i++) {
-			vec[i] = this.normal_int(min, max, { exclusiveStart, inclusiveEnd });
+			vec[i] = this.normal_int(min, max, mean, standardDeviation, skew, { exclusiveStart, inclusiveEnd });
 		}
 
 		return vec;
@@ -124,8 +126,24 @@ export abstract class BaseRandomEngine {
 		return array[this.uniform_int(0, array.length)]!;
 	}
 
-	private normal_num(standardDeviation: number): number {
-		return Math.sqrt(-standardDeviation * Math.log(this.next()))
-			* Math.cos((standardDeviation * Math.PI) * this.next()) / 10;
+	/**
+	 * Generate a random normally distrubuted number with an approximate range of [0, 1]
+	 */
+	private normal_num(mean: number, standardDeviation: number, skew: number): number {
+		let u1, u2;
+		do u1 = this.next(); while (u1 === 0);
+		do u2 = this.next(); while (u2 === 0);
+
+		const R = Math.sqrt(-2 * Math.log(u1));
+		const theta = 2 * Math.PI * u2;
+
+		const u0 = R * Math.cos(theta);
+		const v = R * Math.sin(theta);
+
+		const d = skew / Math.sqrt(1 + skew ** 2);
+		u1 = d * u0 + v * Math.sqrt(1 - d ** 2);
+		const z = u0 >= 0 ? u1 : -u1;
+
+		return (mean + standardDeviation * z) / 10 + 0.5;
 	}
 }

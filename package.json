@@ -1,6 +1,6 @@
 {
 	"name": "better-random.js",
-	"version": "2.0.1",
+	"version": "2.0.4",
 	"description": "better-random.js is an improved random number generator library for JavaScript. The docs have not been updated for 2.0.0 and are out of date and inaccurate for the current version. The docs might be updated later.",
 	"main": "build/index.js",
 	"author": "Rick-vm",
